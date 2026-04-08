@@ -1,0 +1,112 @@
+.carrito-page {
+  background: #f0f0f0;
+  min-height: 80vh;
+  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.volver {
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.carrito-page h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+
+.producto-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #f5f5f5;
+}
+
+.nombre-producto {
+  flex: 1;
+  font-size: 13px;
+  color: #222;
+}
+
+.boton-quitar {
+  background: #3a3a3a;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 3px 8px;
+}
+
+.control button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.control span {
+  font-size: 13px;
+  min-width: 14px;
+  text-align: center;
+}
+
+.pesos {
+  font-weight: 600;
+  font-size: 15px;
+  min-width: 52px;
+  text-align: right;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 4px 8px;
+  font-size: 15px;
+}
+
+.pie-carrito {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+.boton-pagar {
+  background: #3a3a3a;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 22px;
+  font-size: 13px;
+  cursor: pointer;
+}
