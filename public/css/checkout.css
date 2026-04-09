@@ -1,0 +1,30 @@
+.checkout-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background-color: #f8f9fa; /* Ese gris clarito de fondo */
+    padding: 20px;
+}
+.forms-column { flex: 2; }
+.summary-column { flex: 1; }
+
+/* Tarjetas*/
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+/* btn Comprar */
+.btn-confirm {
+    background-color: #28a745; /* El verde de tu imagen */
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px; /* Bordes bien redondeados */
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}

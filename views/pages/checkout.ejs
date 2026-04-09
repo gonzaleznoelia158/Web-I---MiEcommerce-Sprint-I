@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+
+<main>
+
+<div class="forms-columna">
+    <section class="tarjeta">
+        <h2>Direccion de envio</h2>
+        <div class="input">
+            <label>Direccion</label>
+            <input type="text" placeholder="Calle y Numero">
+        </div>
+    </section>
+    <section class="tarjeta">
+        <h2>Metodo de pago</h2>
+        <div class="radio">
+            <label><input type="radio" name="payment" checked>Tarjeta de credito / Debito</label>
+            <label><input type="radio" name="payment"> Mercado Pago</label>
+            <label><input type="radio" name="payment"> Transferencia bancaria</label>
+        </div>
+    </section>
+    
+    <section class="tarjeta">
+        <h2> Informacion de la tarjera</h2>
+        <div class="input">
+            <label> Numero de Tarjeta</label>
+            <input type="text" placeholder="XXXX XXXX XXXX">
+        </div>
+    </section>
+
+</div>
+
+<aside class="resum-column">
+    <div class="tarj-res">
+        <h2>Resumen del pedido</h2>
+        <div class="resu-item">
+            <div class="item">
+                <img src="">
+                <div class="info">
+                    <p>El producto</p>
+                    <span>cantidad</span>
+                </div>
+                <p class="precio">Precio</p>
+            </div>
+        </div>
+        <hr>
+        <div class="total">
+            <p>Subtotal <span>12.512 pesitos</span></p>
+            <p>Envio <span class="gratis"> Gratis</span></p>
+            <hr>
+            <p class="total">Total <strong>12.512 pesitos</strong></p>
+        </div>
+        <button class="btn-confirmar">Confirmar Compra</button>
+    </div>
+</aside>
+
+</main>
+<%- include('../partials/footer') %>
