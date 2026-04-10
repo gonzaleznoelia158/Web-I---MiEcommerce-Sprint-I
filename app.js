@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas para cada vista
-app.get('/', (req, res) => res.render('pages/home'));
+app.get('/', (req, res) => res.render('pages/index'));
 app.get('/login', (req, res) => res.render('pages/login'));
 app.get('/registro', (req, res) => res.render('pages/register'));
 app.get('/producto', (req, res) => res.render('pages/product'));
