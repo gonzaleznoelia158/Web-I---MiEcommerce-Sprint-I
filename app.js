@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Definir la carpeta de archivos estáticos (CSS, imágenes)
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas para cada vista
 app.get('/', (req, res) => res.render('pages/index'));
