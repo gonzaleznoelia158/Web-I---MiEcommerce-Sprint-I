@@ -1,0 +1,93 @@
+.main-header {
+  background-color: #005000;
+  padding: 12px 30px;
+}
+
+/* Contenedor principal */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Agrupa logo + nav */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* controla distancia logo-productos */
+}
+
+/* Logo */
+.logo img {
+  height: 45px;
+}
+
+/* Navegación */
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #E4E3DA;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: #b35e0c;
+}
+
+/* Usuario / Auth */
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth a, 
+.auth span {
+  color: #E4E3DA;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth a:hover {
+  color: #b35e0c;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .left {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Logo más chico */
+  .logo img {
+    height: 35px;
+  }
+
+  /* Nav centrado */
+  .nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    margin: 5px 10px;
+    font-size: 14px;
+  }
+
+  /* Auth abajo */
+  .auth {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+}
