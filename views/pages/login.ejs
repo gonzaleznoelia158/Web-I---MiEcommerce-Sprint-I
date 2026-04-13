@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-3">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
-    <header>
-        <p><b>Mi</b>Ecommerce</p>
-    </header>
-    <main>
-        <form action="/login" method="post">
-            <p>¡Hola!</p>
-            <label for="username">Tu nombre de usuario</label>
-            <input type="text" id="username" name="username" required>
-            <br>
-            <label for="password">Tu contraseña</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <button type="submit">Iniciar Sesion</button>
-            <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your Company</p>
-    </footer>
+
+<%- include('../partials/header') %>
+
+<main>
+    <form action="/login" method="POST">
+        <p>¡Hola!</p>
+
+        <label>Usuario</label>
+        <input type="text" name="username" required>
+
+        <label>Contraseña</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Iniciar Sesión</button>
+
+        <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
+    </form>
+</main>
+
 </body>
 </html>
