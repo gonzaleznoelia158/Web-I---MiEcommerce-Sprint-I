@@ -27,10 +27,7 @@ app.get('/register', (req, res) => res.render('pages/register'));
 app.get('/products', (req, res) => res.render('pages/product'));
 
 // Carrito
-app.get('/cart', (req, res) => {
-  if (!req.session.user) return res.redirect('/login');
-  res.render('pages/cart');
-});
+app.get('/cart', (req, res) => res.render('pages/cart'));
 
 // Checkout
 app.get('/checkout', (req, res) => res.render('pages/checkout'));
