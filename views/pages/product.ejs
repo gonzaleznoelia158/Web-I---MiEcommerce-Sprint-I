@@ -1,0 +1,77 @@
+<%- include('../partials/header') %>
+
+<h1>Este es el producto</h1>
+ <div >
+    <section class="tarjeta">
+        <h2>Direccion de envio</h2>
+        <div class="input">
+            <label>Direccion</label>
+            <input type="text" placeholder="Calle y Numero">
+        </div>
+    </section>
+    <section class="tarjeta">
+        <h2>Metodo de pago</h2>
+        <div class="radio">
+            <label><input type="radio" name="payment" checked>Tarjeta de credito / Debito</label>
+            <label><input type="radio" name="payment"> Mercado Pago</label>
+            <label><input type="radio" name="payment"> Transferencia bancaria</label>
+        </div>
+    </section>
+    
+    <section class="tarjeta">
+        <h2> Informacion de la tarjera</h2>
+        <div class="input">
+            <label> Numero de Tarjeta</label>
+            <input type="text" placeholder="XXXX XXXX XXXX"> 
+        </div>
+    </section>
+</div>
+
+
+<div>
+    <a href="/views/pages/index">
+        <button>Volver al inicio</button>
+    </a>
+    
+    <section>
+        <div>
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+        </div>
+        <div>
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+        </div>
+        <article>
+            <h2>Nombre del Producto</h2>
+            <p>Descripción del producto...</p>
+
+            <a href="">
+                <button>Agregar al carrito</button>
+            </a>
+            <p>Precio: barato</p>
+        </article>
+    </section>
+
+    <section>
+        <div>
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+        </div>
+        <div>
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+        </div>
+        <div>
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+        </div>
+        <div>
+            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+        </div>
+    </section>
+
+    <section>
+        <h2>Otras categorias</h2>
+    </section>
+</div>
+
+
+<%- include('../partials/footer') %>
