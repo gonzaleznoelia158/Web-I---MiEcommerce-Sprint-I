@@ -1,26 +1,48 @@
-.main-footer {
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 50px;
     display: flex;
-    flex-direction: column; 
-    align-items: center;   
-    padding: 40px 0;
-    background-color: #fff; 
-    gap: 20px;             
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 20px;
 }
-.footer-socials {
+
+
+.footer-redes {
     display: flex;
     gap: 15px;
-    font-size: 24px;       
-    color: #666;           
 }
-.footer-copy {
-    color: #777;
-    font-size: 14px;
+.social-link i {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.3s;
 }
+.social-link:hover i {
+    transform: scale(1.2);
+    color: #007bff; 
+}
+
+/* Estilo para las Apps */
 .footer-apps {
     display: flex;
     gap: 10px;
 }
-.footer-apps img {
-    height: 40px;    
-    cursor: pointer;
+.imgpie {
+    height: 40px;
+    width: auto;
+    transition: 0.3s;
+}
+
+.imgpie:hover {
+    filter: brightness(1.2);
+}
+
+/* Responsive para celulares */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
