@@ -1,12 +1,16 @@
 .main-header {
   background-color: #2065b4;
   padding: 12px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 /* Contenedor principal */
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 /* Lado izquierdo (logo + nav) */

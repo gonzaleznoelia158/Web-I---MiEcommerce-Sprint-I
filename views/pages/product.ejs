@@ -1,77 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/products.css">
+    <title>Producto</title>
+</head>
+  <body>
+    <main>
+
+
 <%- include('../partials/header') %>
 
 <h1>Este es el producto</h1>
- <div >
-    <section class="tarjeta">
-        <h2>Direccion de envio</h2>
-        <div class="input">
-            <label>Direccion</label>
-            <input type="text" placeholder="Calle y Numero">
-        </div>
-    </section>
-    <section class="tarjeta">
-        <h2>Metodo de pago</h2>
-        <div class="radio">
-            <label><input type="radio" name="payment" checked>Tarjeta de credito / Debito</label>
-            <label><input type="radio" name="payment"> Mercado Pago</label>
-            <label><input type="radio" name="payment"> Transferencia bancaria</label>
-        </div>
-    </section>
-    
-    <section class="tarjeta">
-        <h2> Informacion de la tarjera</h2>
-        <div class="input">
-            <label> Numero de Tarjeta</label>
-            <input type="text" placeholder="XXXX XXXX XXXX"> 
-        </div>
-    </section>
-</div>
-
 
 <div>
-    <a href="/views/pages/index">
+    <a href="/">
         <button>Volver al inicio</button>
     </a>
     
-    <section>
-        <div>
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+    <section class="productos-demostracion">
+        <div class="productos-columna"> 
+            <img src="img/cuadricula.jpg" alt="Ejemplo de producto ">
+            <img src="img/cuadricula.jpg" alt="Ejemplo de producto ">
+            <img src="img/cuadricula.jpg" alt="Ejemplo de producto ">
         </div>
-        <div>
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
+        <div class="producto-seleccionado">
+            <img src="img/productos/FantaPile.jpg" alt="Ejemplo de producto ">
         </div>
-        <article>
-            <h2>Nombre del Producto</h2>
-            <p>Descripción del producto...</p>
-
+        <article class="descripcion-producto">
+            <div class="producto-nombre">
+                <h1>Fanta Sabor Original 354ml</h1>
+            </div>
+            <div class="puntos-producto-seleccionado">
+                <h1>10.000</h1>
+                <p>PUNTOS</p>
+            </div>
             <a href="">
-                <button>Agregar al carrito</button>
+                <button class="producto-boton">Agregar al carrito</button>
             </a>
-            <p>Precio: barato</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint tempora consequuntur laboriosam! Laboriosam culpa, dolorum, dicta ducimus harum, corporis nisi debitis soluta deleniti voluptates quia necessitatibus natus assumenda doloribus itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, ab. Voluptatem, vitae! Ad praesentium veniam libero, maiores magni voluptatem, quam at, nihil numquam atque aliquid repellendus totam corrupti minima ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempora reiciendis provident adipisci quibusdam velit. Architecto non corporis recusandae voluptates in neque, corrupti, optio dolor necessitatibus eos voluptatum, sint unde!</p>
+
         </article>
     </section>
-
-    <section>
-        <div>
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
-        </div>
-        <div>
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
-        </div>
-        <div>
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
-        </div>
-        <div>
-            <img src="img/productos/ejemplo.jpg" alt="Ejemplo de producto ">
-        </div>
-    </section>
-
+    
+    <h3 class="titulo-productos">Tambien podria interesarte</h3>
+    <div class="productos-grid">  
+        <section class="caja-producto">
+            <div class="producto">
+                <img src="/img/FantaPile.jpg" alt="Fanta Sabor Original 354ml">
+            </div>
+            <a href="/product.ejs">
+                <div class="descripcion">
+                    <div class="nombre">
+                        <h4>Fanta Sabor Original 354ml</h4>
+                    </div>
+                    <div class="puntos-producto">
+                        <span class="cantidad-puntos">10.000</span>
+                        <span class="puntos">PUNTOS</span>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="caja-producto">
+            <div class="producto">
+                <img src="/img/pringles.jpg" alt="Papas Pringles Sabor Original 40g">
+            </div>
+            <div class="descripcion">
+                <div class="nombre">
+                    <h4>Papas Pringles Sabor Original 40g</h4>
+                </div>
+                <div class="puntos-producto">
+                    <span class="cantidad-puntos">20.000</span>
+                    <span class="puntos">PUNTOS</span>
+                </div>
+            </div>
+        </section>
+        <section class="caja-producto">
+            <div class="producto">
+                <img src="/img/cuadricula.jpg" alt="XXXXX">
+            </div>
+            <div class="descripcion">
+                <div class="nombre">
+                    <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
+                </div>
+                <div class="puntos-producto">
+                    <span class="cantidad-puntos">XX.XXX</span>
+                    <span class="puntos">PUNTOS</span>
+                </div>
+            </div>
+        </section>
+        <section class="caja-producto">
+            <div class="producto">
+                <img src="/img/cuadricula.jpg" alt="XXXXX">
+            </div>
+            <div class="descripcion">
+                <div class="nombre">
+                    <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
+                </div>
+                <div class="puntos-producto">
+                    <span class="cantidad-puntos">XX.XXX</span>
+                    <span class="puntos">PUNTOS</span>
+                </div>
+            </div>
+        </section>
+    </div>  
     <section>
         <h2>Otras categorias</h2>
     </section>
 </div>
 
-
-<%- include('../partials/footer') %>
+<section class="caja-iconos">
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-tv"></i>
+        </div>
+        <h4>Electronica</h4>
+    </div>
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-burger"></i>
+        </div>
+        <h4>Alimentos</h4>
+    </div>
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-bottle-water"></i>
+        </div>
+        <h4>Bebidas</h4>
+    </div>
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-shirt"></i>
+        </div>
+        <h4>Indumentaria</h4>
+    </div>
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-gamepad"></i>
+        </div>
+        <h4>Juegos</h4>
+    </div>
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-car-rear"></i>
+        </div>
+        <h4>Automotor</h4>
+    </div>
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-couch"></i>
+        </div>
+        <h4>Hogar</h4>
+    </div>
+    <div class="item">
+        <div class="iconos">
+            <i class="fa-solid fa-gift"></i>
+        </div>
+        <h4>Otros</h4>
+    </div>
+</section>
