@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
+
+
 
 // Motor de vistas
 app.set('view engine', 'ejs');
