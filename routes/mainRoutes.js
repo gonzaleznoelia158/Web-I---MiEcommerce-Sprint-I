@@ -1,9 +1,15 @@
-const express = require(`express`);
+const express = require('express');
 const router = express.Router();
+const productsService = require('../services/productsService'); // <-- nuevo
 
-// Rutas para páginas principales
-router.get('/', (req, res) => res.render('pages/index'));
-router.get('/login',(req, res)=> {res.render('pages/login')});
-router.get('/register', (req, res) =>{res.render('pages/register')});
+// Ruta principal con productos
+router.get('/', (req, res) => {
+  const products = productsService.getAll();
+  res.render('pages/index', { products });
+});
+//Rutas de registro y login
+router.get('/login', (req, res) => { res.render('pages/login') });
+router.get('/register', (req, res) => { res.render('pages/register') });
 
+//Exporta la ruta
 module.exports = router;

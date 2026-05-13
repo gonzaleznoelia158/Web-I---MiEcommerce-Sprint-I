@@ -16,23 +16,14 @@
                 <label>Código Postal</label>
                 <input type="text" placeholder="Código Postal">
             </div>
-            </section>
+        </section>
 
         <section class="tarjeta">
             <h2>Método de pago</h2>
             <div class="radio">
-                <label>
-                    <input type="radio" name="payment" checked> 
-                    Tarjeta de crédito / Débito
-                </label>
-                <label>
-                    <input type="radio" name="payment"> 
-                    Mercado Pago
-                </label>
-                <label>
-                    <input type="radio" name="payment"> 
-                    Transferencia bancaria
-                </label>
+                <label><input type="radio" name="payment" checked> Tarjeta de crédito / Débito</label>
+                <label><input type="radio" name="payment"> Mercado Pago</label>
+                <label><input type="radio" name="payment"> Transferencia bancaria</label>
             </div>
         </section>
         
@@ -53,22 +44,29 @@
         <div class="tarj-res">
             <h2>Resumen del pedido</h2>
             
-            <div class="item">
-                <img src="img/productos/ejemplo.jpg" alt="Producto">
-                <div class="info">
-                    <p>El producto fachero</p>
-                    <span>1 unidad</span>
-                </div>
-                <p class="precio">$12.512</p>
-            </div>
+            <% if (cart.length === 0) { %>
+                <p>No hay productos en el carrito.</p>
+                <a href="/">Seguir comprando</a>
+            <% } else { %>
+                <% cart.forEach(item => { %>
+                    <div class="item">
+                        <img src="<%= item.product.imagen %>" alt="<%= item.product.nombre %>">
+                        <div class="info">
+                            <p><%= item.product.nombre %></p>
+                            <span><%= item.quantity %> unidad(es)</span>
+                        </div>
+                        <p class="precio"><%= item.subtotal %> $</p>
+                    </div>
+                <% }); %>
+            <% } %>
 
             <hr>
 
             <div class="total">
-                <p>Subtotal <span>$12.512</span></p>
+                <p>Subtotal <span><%= subtotal %> $</span></p>
                 <p>Envío <span class="gratis">Gratis</span></p>
                 <hr>
-                <p>Total <strong>$12.512</strong></p>
+                <p>Total <strong><%= total %> $</strong></p>
             </div>
 
             <button class="btn-confirmar">Confirmar Compra</button>

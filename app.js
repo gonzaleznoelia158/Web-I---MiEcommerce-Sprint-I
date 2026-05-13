@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const app = express();
 const path = require('path');
 
@@ -11,6 +12,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Leer formularios
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+//Session para el carrito
+app.use(session({
+  secret: 'mi-secreto-para-carrito',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // localhost no necesita HTTPS
+}));
 
 // Archivos de rutas
 const mainRouter = require('./routes/mainRoutes');

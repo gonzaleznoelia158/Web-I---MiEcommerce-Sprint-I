@@ -11,59 +11,6 @@
     <main>
         <%# Header %> 
       <%- include('../partials/header') %>
-      
-      <%# CONTENEDOR DE ICONOS %>
-      <section class="caja-iconos">
-        <div class="item">
-        <div class="iconos">
-         <i class="fa-solid fa-tv">
-          </i></div>
-            <h4>Electronica</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-burger">
-          </i></div>
-            <h4>Alimentos</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-bottle-water">
-          </i></div>
-         <h4>Bebidas</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-shirt">
-          </i></div>
-         <h4>Indumentaria</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-gamepad">
-          </i></div>
-         <h4>Juegos</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-car-rear">
-          </i></div>
-         <h4>Automotor</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-couch">
-          </i></div>
-         <h4>Hogar</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-gift">
-          </i></div>
-         <h4>Otros</h4>
-        </div>
-      </section>
-
       <%# BANNER PUBLICITARIO %>
         <section class="banner">
           <div class="banner-card">
@@ -85,79 +32,34 @@
           </div>
         </section>
 
+      <%# CONTENEDOR DE ICONOS %>
+      <%- include('../partials/secciones') %>
 
         <%# SECCION DE PRODUCTOS %>
 
       <h3 class="titulo-productos">Tambien podria interesarte</h3>
 
-    <div class="productos-grid">  
-        <section class="caja-producto">
-            <div class="producto">
-              <img src="/img/index/FantaPile.jpg" alt="Fanta Sabor Original 354ml">
-            </div>
-            <a href="/product.js">
-              <div class="descripcion">
-               <div class="nombre">
-                <h4>Fanta Sabor Original 354ml</h4>
-               </div>
-            
-               <div class="puntos-producto">
-                 <span class="cantidad-puntos">10.000</span>
-                 <span class="puntos">PUNTOS</span>
-                </div>
-              </div>
-            </a>
-        </section>
-
-        <section class="caja-producto">
-          <div class="producto">
-            <img src="/img/index/pringles.jpg" alt="Papas Pringles Sabor Original 40g">
+      <div class="productos-grid">
+  <% products.forEach(product => { %>
+    <section class="caja-producto">
+      <div class="producto">
+        <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
+      </div>
+      <a href="/products/<%= product.id %>">
+        <div class="descripcion">
+          <div class="nombre">
+            <h4><%= product.nombre %></h4>
           </div>
-              
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>Papas Pringles Sabor Original 40g</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">20.000</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
+          <div class="puntos-producto">
+            <span class="cantidad-puntos"><%= product.precio %></span>
+            <span class="puntos">$</span>
           </div>
-        </section>
-
-        <section class="caja-producto">
-          <div class="producto">
-             <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-              
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">XX.XXX</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="caja-producto">
-          <div class="producto">
-             <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-              
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">XX.XXX</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-        </section>
-    </div>  
-    
+        </div>
+      </a>
+    </section>
+  <% }); %>
+</div>
+      
     <%# SECCION DE PRODUCTOS 2 %>
 
     <h3 class="titulo-productos">Los mas pedidos</h3>
@@ -296,56 +198,7 @@
     </div>  
 
         <%# CONTENEDOR DE ICONOS 2 %>
-      <section class="caja-iconos">
-        <div class="item">
-        <div class="iconos">
-         <i class="fa-solid fa-tv">
-          </i></div>
-            <h4>Electronica</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-burger">
-          </i></div>
-            <h4>Alimentos</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-bottle-water">
-          </i></div>
-         <h4>Bebidas</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-shirt">
-          </i></div>
-         <h4>Indumentaria</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-gamepad">
-          </i></div>
-         <h4>Juegos</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-car-rear">
-          </i></div>
-         <h4>Automotor</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-couch">
-          </i></div>
-         <h4>Hogar</h4>
-        </div>
-        <div class="item">
-          <div class="iconos">
-         <i class="fa-solid fa-gift">
-          </i></div>
-         <h4>Otros</h4>
-        </div>
-      </section>
+        <%- include('../partials/secciones') %>
 
       <%- include('../partials/footer') %>
     </main>

@@ -1,9 +1,19 @@
-const express = require(`express`);
+const express = require('express');
 const router = express.Router();
+const productController = require('../controllers/productController');
+const cartController = require('../controllers/cartController');
 
-//Rutas para productos y demas
-router.get('/product', (req, res) => {res.render('pages/product')});
-router.get('/cart', (req, res)=> {res.render('pages/cart')});
-router.get('/checkout', (req, res)=> {res.render('pages/checkout')});
+// Rutas del carrito
+router.get('/cart', cartController.showCart);
+//Ruta para agregar producto
+router.post('/cart/add/:productId', cartController.addToCart);
+//Actualiza la cantidad de productos
+router.post('/cart/update/:productId', cartController.updateCartItem);
+//Vacia el carrito 
+router.post('/cart/clear', cartController.clearCart);
+//Ruta de checkout
+router.get('/cart/checkout', cartController.showCheckout);
+//Ruta para ver un producto
+router.get('/:id', productController.showProductDetail);
 
 module.exports = router;
