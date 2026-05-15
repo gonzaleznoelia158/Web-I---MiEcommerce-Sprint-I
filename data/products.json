@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nombre": "Fanta",
+        "precio": 1400,
+        "imagen": "/img/FantaPile.jpg",
+        "descripcion": "Una fanta clasica, burbujeante y refrescante de 354ml.",
+        "categoria": "bebidas",
+        "stock": 10
+    },
+    {
+        "id": 2,
+        "nombre": "Papas Pringles sabor original",
+        "precio": 2000,
+        "imagen": "/img/pringles.jpg",
+        "descripcion": "Papas fritas pringles sabor original",
+        "categoria": "alimentos",
+        "stock": 12
+    },
+    {
+        "id": 3,
+        "nombre": "Hamburguesa doble",
+        "precio": 9000,
+        "imagen": "/img/burgerDoble.jpg",
+        "descripcion": "Hamburguesa con doble queso y cebolla.",
+        "categoria": "alimentos",
+        "stock": 20
+    },
+    {
+        "id": 4,
+        "nombre": "Hamburguesa simple",
+        "precio": 7000,
+        "imagen": "/img/burgerSimple.jpg",
+        "descripcion": "Hamburguesa simple.",
+        "categoria": "alimentos",
+        "stock": 10
+    }
+]

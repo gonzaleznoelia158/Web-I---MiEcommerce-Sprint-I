@@ -1,31 +1,35 @@
-<<<<<<< Updated upstream
-=======
 <link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/footer.css">
+<%# Font Awesome para íconos de redes sociales %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/social-icons.css">
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/checkout.css">
+
 
 <header class="main-header">
   <div class="header-container">
 
     <div class="left">
       <a href="/" class="logo">
-        <img src="/img/logo_blanco.png" alt="Logo">
+        <img src="/img/foot/logo_blanco.png" alt="Logo">
       </a>
 
       <nav class="nav">
-        <a href="/products">Productos</a>
+        <a href="/">Inicio</a>
       </nav>
     </div>
 
-    <div class="auth">
-      <% if (user) { %>
-        <span><%= user.username %></span>
-        <a href="/cart">🛒</a>
-      <% } else { %>
-        <a href="/login">Login</a>
-        <span>/</span>
-        <a href="/register">Register</a>
-      <% } %>
+    <div class="center">
+      <input type="text" placeholder="Buscar productos..." class="buscar">
+      <button class="btn.buscar" type="submit"><i class="fas fa-search"></i></button>
     </div>
 
+    <div class="auth">
+      <a href="/products/cart" class="carrito"><i class="fas fa-shopping-cart"></i></a>
+      <a href="/login">Login</a>
+      <span>/</span>
+      <a href="/register">Register</a>
+    </div>
   </div>
 </header>
->>>>>>> Stashed changes

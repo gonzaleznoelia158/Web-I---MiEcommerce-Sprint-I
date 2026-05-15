@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-    <link rel="stylesheet" href="../../public/login.css">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <header>
-        <p><b>Mi</b>Ecommerce</p>
-    </header>
-    <main>
-        <form action="/login" method="POST">
-        <input type="text" name="username" placeholder="Usuario" required>
-        <input type="password" name="password" placeholder="Contraseña" required>
-        <button type="submit">Login</button>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your Company</p>
+
+<%- include('../partials/header') %>
+
+<main>
+    <form action="/" method="GET">
+        <p>Iniciar Sesión</p>
+            <input type="text" name="Usuario" placeholder="Usuario" required>
+            <input type="password" name="Contraseña" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+
+        <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
+    </form>
+</main>
+<%- include('../partials/footer') %>
 </body>
 </html>

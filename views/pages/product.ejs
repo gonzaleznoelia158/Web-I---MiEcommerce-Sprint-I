@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/products.css">
+    <title><%= product.nombre %></title>
+</head>
+<body>
+    <main>
+        <%- include('../partials/header') %>
+
+        <h1 class="titulo">Detalles del producto</h1>
+
+        <div>
+            <section class="productos-demostracion">
+                <div class="productos-columna"> 
+                    <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
+                    <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
+                    <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
+                </div>
+                <div class="producto-seleccionado">
+                    <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
+                </div>
+                <article class="descripcion-producto">
+                    <div class="producto-nombre">
+                        <h1><%= product.nombre %></h1>
+                    </div>
+                    <div class="puntos-producto-seleccionado">
+                        <h1><%= product.precio %></h1>
+                        <p>$</p>
+                    </div>
+                    <form action="/products/cart/add/<%= product.id %>" method="POST">
+                        <button type="submit" class="producto-boton">Agregar al carrito</button>
+                    </form>
+                    <p><%= product.descripcion %></p>
+                    <p><strong>Stock:</strong> <%= product.stock %> unidades</p>
+                </article>
+            </section>
+
+            <h3 class="titulo-productos">También podría interesarte</h3>
+            <div class="productos-grid">  
+                
+                <section class="caja-producto">
+                    <div class="producto">
+                        <img src="/img/FantaPile.jpg" alt="Fanta Sabor Original 354ml">
+                    </div>
+                    <a href="/products/1">
+                        <div class="descripcion">
+                            <div class="nombre">
+                                <h4><%= product.nombre %></h4>
+                            </div>
+                            <div class="puntos-producto">
+                                <span class="cantidad-puntos"><%= product.precio %></span>
+                                <span class="puntos">$</span>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                
+                <section class="caja-producto">
+                    <div class="producto">
+                        <img src="/img/pringles.jpg" alt="Papas Pringles Sabor Original 40g">
+                    </div>
+                    <a href="/products/2">
+                        <div class="descripcion">
+                            <div class="nombre">
+                                <h4><%= product.nombre %></h4>
+                            </div>
+                            <div class="puntos-producto">
+                                <span class="cantidad-puntos"><%= product.precio %></span>
+                                <span class="puntos">$</span>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+            </div>  
+
+            <section>
+                <h2 class="titulo">Otras categorías</h2>
+            </section>
+        </div>
+
+        <%- include('../partials/secciones') %>  
+        <%- include('../partials/footer') %>
+    </main>
+</body>
+</html>

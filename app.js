@@ -1,57 +1,37 @@
 const express = require('express');
+const session = require('express-session');
 const app = express();
 const path = require('path');
-const session = require('express-session');
 
-// Configurar sesiones
-app.use(session({
-  secret: 'secreto', // Cambia esto por una clave secreta en producción
-  resave: false,
-  saveUninitialized: true
-}));
-
-// Configurar el motor de plantillas EJS
+// Motor de vistas
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Definir la carpeta de archivos estáticos (CSS, imágenes)
-app.use(express.static(path.join(__dirname, 'assets')));
+// Archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
 
-//Leer form en login y register
+// Leer formularios
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-//Login configurado
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
+//Session para el carrito
+app.use(session({
+  secret: 'mi-secreto-para-carrito',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // localhost no necesita HTTPS
+}));
 
-  //Credenciales de ejemplo, despues esto hay que reemplazarlo por una DB que todavia creo q no nos la enseñaron 
-  if (user === "pupin" && password === "1234") {
-    req.session.user = {
-      username: username,
-      cart: []
-    };
-    return res.redirect("/");
-  }
+// Archivos de rutas
+const mainRouter = require('./routes/mainRoutes');
+const productsRouter = require('./routes/productRoutes');
 
-  res.send("Usuario o contraseña incorrectos");
-});
+// Usar rutas
+app.use('/', mainRouter);
+app.use('/products', productsRouter);
 
-//Hago que user exista en todos los ejs
-app.use((req, res, next) => {
-  res.locals.user = req.session.user || null;
-    next();
-});
-
-// Rutas para cada vista
-app.get('/', (req, res) => res.render('partials/pages/index'));
-app.get('/login', (req, res) => res.render('partials/pages/login'));
-app.get('/registro', (req, res) => res.render('partials/pages/register'));
-app.get('/producto', (req, res) => res.render('partials/pages/product'));
-app.get('/carrito', (req, res) => res.render('partials/pages/cart'));
-app.get('/checkout', (req, res) => res.render('partials/pages/checkout'));
-
-// Servidor 
+// Servidor
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});});
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
