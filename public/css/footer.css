@@ -40,9 +40,13 @@
 }
 
 /* Responsive para celulares */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .footer {
         flex-direction: column;
         text-align: center;
+        
+    }
+    .footer-apps {
+        flex-wrap: wrap-reverse;
     }
 }

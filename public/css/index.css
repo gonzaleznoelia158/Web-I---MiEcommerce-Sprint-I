@@ -189,3 +189,57 @@ body {
     color:#5b2c01;
     display: block;
 }
+
+/*Resposive*/
+@media (max-width: 768px) {
+  .caja-iconos { 
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+}
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    padding: 10px;
+  }
+  .producto img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover; 
+}
+.descripcion {
+    flex-direction: row;
+    font-size: small;
+}
+  .banner {
+    flex-direction: column; 
+    gap: 20px;
+    justify-content: center;
+  }
+  .banner-card {
+    width: 90%;
+  }
+  .texto-encima {
+    bottom: 10px;
+    left: 10px;
+    padding: 8px;
+    max-width: 70%;
+  }
+  .texto-encima h3 {
+    font-size: 1rem;
+  }
+    .texto-encima p {
+        font-size: 0.8rem;
+    }
+    .titulo-productos {
+        text-align: center;
+        padding-left: 0;
+    }
+    .item:not(:last-child) {
+        border-right: none; 
+    }
+}

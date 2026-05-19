@@ -1,5 +1,5 @@
 .main-header {
-  background-color: #2065b4;
+  background-color: rgba(252, 154, 49, 0.95);
   padding: 12px 30px;
   position: sticky;
   top: 0;
@@ -29,7 +29,7 @@
 .nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: #E4E3DA;
+  color: #5b2c01;
   font-weight: 600;
   position: relative;
   transition: 0.2s;
@@ -43,7 +43,7 @@
   height: 2px;
   bottom: -3px;
   left: 0;
-  background-color: #b35e0c;
+  background-color: #5b2c01;
   transition: 0.3s;
 }
 
@@ -60,7 +60,7 @@
 
 .auth a,
 .auth span {
-  color: #E4E3DA;
+  color: #5b2c01;
   text-decoration: none;
   font-weight: 500;
   transition: 0.2s;
@@ -75,7 +75,7 @@
   font-size: 18px;
 }
 
-/* 📱 Responsive */
+/*  Responsive */
 @media (max-width: 768px) {
 
   .header-container {

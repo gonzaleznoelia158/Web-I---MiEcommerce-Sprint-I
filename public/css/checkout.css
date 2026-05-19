@@ -20,16 +20,29 @@
 }
 /*Cambiar el fondo por el color que quieran*/
 .tarjeta, .tarj-res {
-    background-color: gray;
+    background-color: rgba(252, 154, 49, 0.95);
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
 }
 
+.tarj-res:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+.precio {
+    color: #faf8f8;
+}
 .tarjeta h2, .tarj-res h2 {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #5b2c01;
 }
 
 .input {
@@ -41,7 +54,7 @@
 
 .input label {
     font-size: 0.9rem;
-    color: #666;
+    color: #5b2c01;
 }
 
 .input input {
@@ -97,7 +110,7 @@
 
 .resum-column .info span {
     font-size: 0.8rem;
-    color: #888;
+    color: #5b2c01;
 }
 
 .resum-column .precio {
@@ -107,7 +120,7 @@
 /* Totales y Separadores */
 hr {
     border: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #5b2c01;
     margin: 20px 0;
 }
 
@@ -115,17 +128,17 @@ hr {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
-    color: #555;
+    color: #5b2c01;
 }
 /*Verde = gratis*/
 /*No cambiar desde aca, porque es para el boton*/
 .gratis {
-    color: #28a745; 
+    color: #faf8f8; 
     font-weight: bold;
 }
 .total strong {
     font-size: 1.3rem;
-    color: #333;
+    color: #faf8f8;
 }
 /* Botón Confirmar */
 .btn-confirmar {
