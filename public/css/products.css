@@ -4,6 +4,13 @@ body {
     margin: 0;
 }
 
+.titulo{
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    color: #5b2c01;
+}
+
 .caja-iconos {
     display: flex;
     float: center; 

@@ -20,7 +20,7 @@
 }
 /*Cambiar el fondo por el color que quieran*/
 .tarjeta, .tarj-res {
-    background-color: gray;
+    background-color: lightgray;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -90,6 +90,7 @@
 }
 
 .resum-column .info p {
+    color: black;
     margin: 0;
     font-size: 0.9rem;
     font-weight: bold;
@@ -115,7 +116,7 @@ hr {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
-    color: #555;
+    color: black;
 }
 /*Verde = gratis*/
 /*No cambiar desde aca, porque es para el boton*/
@@ -125,7 +126,7 @@ hr {
 }
 .total strong {
     font-size: 1.3rem;
-    color: #333;
+    color: black;
 }
 /* Botón Confirmar */
 .btn-confirmar {

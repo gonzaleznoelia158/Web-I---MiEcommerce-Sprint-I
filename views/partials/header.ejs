@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="/css/social-icons.css">
 <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/checkout.css">
 
 
 <header class="main-header">
@@ -15,8 +16,20 @@
       </a>
 
       <nav class="nav">
-        <a href="/">Productos</a>
+        <a href="/">Inicio</a>
       </nav>
+    </div>
+
+    <div class="center">
+      <input type="text" placeholder="Buscar productos..." class="buscar">
+      <button class="btn.buscar" type="submit"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="carrito-header">
+        <a href="/products/cart" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-cart-shopping"></i> 
+            <span class="monto-carrito">$<%= cartTotal %></span>
+        </a>
     </div>
 
     <div class="auth">
