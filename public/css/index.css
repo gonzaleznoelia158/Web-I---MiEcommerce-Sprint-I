@@ -189,3 +189,29 @@ body {
     color:#5b2c01;
     display: block;
 }
+
+/* Estilos para el ordenamiento*/
+.ordenar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.ordenar label{
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+}
+.select select{
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 8px 32px 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    cursor: pointer;
+    transition: all 0,3s ease;
+}

@@ -2,10 +2,21 @@ const fs = require('fs');
 const path = require('path');
 
 const productsPath = path.join(__dirname, '../data/products.json');
-//Muestra el contenido del JSON
-function getAll() {
-  const data = fs.readFileSync(productsPath, 'utf8');
+//Leer productos desde el JSON
+function readProducts(){
+  const data = fs.readFileSync(productsPath, 'utf-8');
   return JSON.parse(data);
+}
+//Obtener y opion de ordenar productoss
+function getAll(sort = null) {
+  const products = readProducts();
+  if(sort === 'asc'){
+    return products.sort((a,b) => a.precio - b.precio);
+  } 
+  if(sort === 'desc'){
+    return products.sort((a,b) => b.precio - a.precio);
+  }
+  return products;
 }
 //Busca el producto por id
 function getById(id) {

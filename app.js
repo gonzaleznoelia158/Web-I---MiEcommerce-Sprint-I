@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const cartCont = require('./middleware/cartCont');
 const app = express();
 const path = require('path');
 
