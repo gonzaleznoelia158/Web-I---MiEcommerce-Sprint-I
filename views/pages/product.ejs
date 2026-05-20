@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
     <link rel="stylesheet" href="/css/products.css">
-    <title>Producto</title>
+    <title><%= product.nombre %></title>
 </head>
-  <body>
+<body>
     <main>
+        <%- include('../partials/header') %>
 
-
-<%- include('../partials/header') %>
-
-<h1>Este es el producto</h1>
+        <h1 class="titulo">Detalles del producto</h1>
 
 <div>
     <a href="/">
@@ -41,7 +39,6 @@
                 <button class="producto-boton">Agregar al carrito</button>
             </a>
             <p></p>
-
         </article>
     </section>
     
@@ -51,7 +48,7 @@
             <div class="producto">
                 <img src="/img/FantaPile.jpg" alt="Fanta Sabor Original 354ml">
             </div>
-            <a href="/products">
+            <a href="/product.ejs">
                 <div class="descripcion">
                     <div class="nombre">
                         <h4>Fanta Sabor Original 354ml</h4>
@@ -161,4 +158,3 @@
         <h4>Otros</h4>
     </div>
 </section>
-<%- include('../partials/footer') %>
