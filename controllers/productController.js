@@ -9,7 +9,15 @@ function showProductDetail(req, res) {
   if (!product){
      return res.status(404).send('Producto no encontrado');//si no se encuentra el producto, renderiza un error
   }
-     res.render('pages/product', { product }); //si todo sale bien, muestra el producto correspondinte
+
+  //User Story 8
+  const todosLosProductos = productsService.getAll();
+  
+  const relacionados = todosLosProductos 
+    .filter(p => p.id !== id)
+    .slice(0, 2);
+
+     res.render('pages/product', { product, relacionados }); //si todo sale bien, muestra el producto correspondinte
 }
 
 //exporta la funcion

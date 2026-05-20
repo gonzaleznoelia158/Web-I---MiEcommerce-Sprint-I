@@ -38,8 +38,29 @@
                     <p><strong>Stock:</strong> <%= product.stock %> unidades</p>
                 </article>
             </section>
-
             <h3 class="titulo-productos">También podría interesarte</h3>
+            <div class="productos-grid">  
+                
+                <% relacionados.forEach(rel => { %>
+                    <section class="caja-producto">
+                        <div class="producto">
+                            <img src="<%= rel.imagen %>" alt="<%= rel.nombre %>">
+                        </div>
+                        
+                        <a href="/products/<%= rel.id %>">
+                            <div class="descripcion">
+                                <div class="nombre">
+                                    <h4><%= rel.nombre %></h4>
+                                </div>
+                                <div class="puntos-producto">
+                                    <span class="cantidad-puntos"><%= rel.precio %></span>
+                                    <span class="puntos">$</span>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                <% }) %>
+            <!-- <h3 class="titulo-productos">También podría interesarte</h3> 
             <div class="productos-grid">  
                 
                 <section class="caja-producto">
@@ -57,7 +78,7 @@
                             </div>
                         </div>
                     </a>
-                </section>
+                </section> -->
                 
                 <section class="caja-producto">
                     <div class="producto">

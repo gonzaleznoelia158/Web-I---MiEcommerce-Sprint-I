@@ -3,6 +3,10 @@ const session = require('express-session');
 const app = express();
 const path = require('path');
 
+//Services
+const productsService = require('./services/productsService');
+const cartService = require('./services/cartService');
+
 // Motor de vistas
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +25,16 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false } // localhost no necesita HTTPS
 }));
+
+//Middleware global, pq sino no se puede acceder al carrito desde el header sin hacer una consulta a la BD cada vez
+app.use((req, res, next) => {
+    try {
+        res.locals.cartTotal = cartService.getTotalPesos(req, productsService) || 0;
+    } catch (error) {
+        res.locals.cartTotal = 0; // Si tira error arranca en 0
+    }
+    next();
+});
 
 // Archivos de rutas
 const mainRouter = require('./routes/mainRoutes');
