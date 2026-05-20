@@ -11,12 +11,9 @@
   <div class="header-container">
 
     <div class="left">
+       <nav class="nav">
       <a href="/" class="logo">
-        <img src="/img/foot/logo_blanco.png" alt="Logo">
-      </a>
-
-      <nav class="nav">
-        <a href="/">Inicio</a>
+        <img src="/img/foot/home.jpg" alt="Logo" title="Inicio">
       </nav>
     </div>
 
@@ -26,7 +23,12 @@
     </div>
 
     <div class="auth">
-      <a href="/products/cart" class="carrito"><i class="fas fa-shopping-cart"></i></a>
+      <a href="/products/cart" class="carrito"><i class="fas fa-shopping-cart">
+        <% if (cartCont > 0){ %>
+          <span class="contador"><%= cartCont %></span>
+        <% } %>
+      </i></a>
+      <hr>
       <a href="/login">Login</a>
       <span>/</span>
       <a href="/register">Register</a>

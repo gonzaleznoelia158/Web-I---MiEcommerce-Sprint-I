@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const cartCont = require('./middleware/cartCont');
 const app = express();
 const path = require('path');
 
@@ -21,6 +22,9 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false } // localhost no necesita HTTPS
 }));
+
+//Middleware para contar el carrito
+app.use(cartCont);
 
 // Archivos de rutas
 const mainRouter = require('./routes/mainRoutes');
