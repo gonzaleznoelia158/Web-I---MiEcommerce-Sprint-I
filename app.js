@@ -25,6 +25,7 @@ app.use(session({
 // Archivos de rutas
 const mainRouter = require('./routes/mainRoutes');
 const productsRouter = require('./routes/productRoutes');
+const { title } = require('process');
 
 // Usar rutas
 app.use('/', mainRouter);
@@ -34,4 +35,10 @@ app.use('/products', productsRouter);
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
+
+// Error 404
+
+app.use((req, res) => {
+  res.status(404).render('pages/404.ejs', { title: '404 - Página no encontrada' });
 });
