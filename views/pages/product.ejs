@@ -40,24 +40,36 @@
             </section>
 
             <h3 class="titulo-productos">También podría interesarte</h3>
-            <div class="productos-grid">  
-                
-                <section class="caja-producto">
-                    <div class="producto">
-                        <img src="/img/FantaPile.jpg" alt="Fanta Sabor Original 354ml">
-                    </div>
-                    <a href="/products/1">
-                        <div class="descripcion">
-                            <div class="nombre">
-                                <h4><%= product.nombre %></h4>
+            
+            <% if (relatedProducts && relatedProducts.length > 0) { %>
+                <div class="productos-grid">  
+                    <% relatedProducts.forEach(relacionado => { %>
+                        <section class="caja-producto">
+                            <div class="producto">
+                                <img src="<%= relacionado.imagen %>" alt="<%= relacionado.nombre %>">
                             </div>
-                            <div class="puntos-producto">
-                                <span class="cantidad-puntos"><%= product.precio %></span>
-                                <span class="puntos">$</span>
-                            </div>
-                        </div>
-                    </a>
-                </section>
+                            <a href="/products/<%= relacionado.id %>">
+                                <div class="descripcion">
+                                    <div class="nombre">
+                                        <h4><%= relacionado.nombre %></h4>
+                                    </div>
+                                    <div class="puntos-producto">
+                                        <span class="cantidad-puntos"><%= relacionado.precio %></span>
+                                        <span class="puntos">$</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </section>
+                    <% }) %>
+                </div>  
+            <% } else { %>
+                <div class="mensaje-sin-relacionados">
+                    <p>Actualmente no tenemos productos similares para mostrarte, ¡pero podés seguir explorando nuestro catálogo!</p>
+                </div>
+            <% } %>
+
+            <section>
+                <h2 class="titulo">Otras categorías</h2>
                 
                 <section class="caja-producto">
                     <div class="producto">
@@ -76,10 +88,6 @@
                     </a>
                 </section>
             </div>  
-
-            <section>
-                <h2 class="titulo">Otras categorías</h2>
-            </section>
         </div>
 
         <%- include('../partials/secciones') %>  
