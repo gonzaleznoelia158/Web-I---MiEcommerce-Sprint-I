@@ -24,15 +24,19 @@
                     <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
                 </div>
                 <article class="descripcion-producto">
+                    
                     <div class="producto-nombre">
                         <h1><%= product.nombre %></h1>
+                        <% if (product.stock === 0) { %>
+                        <span class="badge-sin-stock">Sin stock</span>
+                        <% } %>
                     </div>
                     <div class="puntos-producto-seleccionado">
                         <h1><%= product.precio %></h1>
                         <p>$</p>
                     </div>
                     <form action="/products/cart/add/<%= product.id %>" method="POST">
-                        <button type="submit" class="producto-boton">Agregar al carrito</button>
+                        <button type="submit" class="producto-boton" <%= product.stock === 0 ? 'disabled' : '' %>>Agregar al carrito</button>
                     </form>
                     <p><%= product.descripcion %></p>
                     <p><strong>Stock:</strong> <%= product.stock %> unidades</p>

@@ -33,7 +33,7 @@
         "imagen": "/img/burgerSimple.jpg",
         "descripcion": "Hamburguesa simple.",
         "categoria": "alimentos",
-        "stock": 10
+        "stock": 0
     },
     {
         "id": 5,
