@@ -57,3 +57,8 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+
+// Error 404
+app.use((req, res) => {
+  res.status(404).render('pages/404.ejs', { title: '404 - Página no encontrada' });
+});
