@@ -1,0 +1,159 @@
+[
+    {
+        "id": 1,
+        "nombre": "Fanta",
+        "precio": 1400,
+        "imagen": "/img/FantaPile.jpg",
+        "descripcion": "Una fanta clasica, burbujeante y refrescante de 354ml.",
+        "categoria": "bebidas",
+        "stock": 10,
+        "feature": true
+    },
+    {
+        "id": 2,
+        "nombre": "Papas Pringles sabor original",
+        "precio": 2000,
+        "imagen": "/img/pringles.jpg",
+        "descripcion": "Papas fritas pringles sabor original",
+        "categoria": "alimentos",
+        "stock": 12
+    },
+    {
+        "id": 3,
+        "nombre": "Hamburguesa doble",
+        "precio": 9000,
+        "imagen": "/img/burgerDoble.jpg",
+        "descripcion": "Hamburguesa con doble queso y cebolla.",
+        "categoria": "alimentos",
+        "stock": 20
+    },
+    {
+        "id": 4,
+        "nombre": "Hamburguesa simple",
+        "precio": 7000,
+        "imagen": "/img/burgerSimple.jpg",
+        "descripcion": "Hamburguesa simple.",
+        "categoria": "alimentos",
+        "stock": 10
+    },
+    {
+        "id": 5,
+        "nombre": "Refresco Fanta Roja",
+        "precio": 1200,
+        "imagen": "/img/FantaRoja.jpg",
+        "descripcion": "Refresco de manzana natural de 354ml.",
+        "categoria": "bebidas",
+        "stock": 15
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25,
+        "feature": true
+    },
+    {
+        "id": 7,
+        "nombre": "Chocolate Cofler Tofi Aireado 70gr",
+        "precio": 3000,
+        "imagen": "/img/cofler70gr.jpg",
+        "descripcion": "Chocolate Cofler Tofi Aireado de 70 gramos, relleno de pasta sabor tofi y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 30,
+        "feature": true
+    },
+    {
+        "id": 8,
+        "nombre": "Galletas Oreo Original 114gr",
+        "precio": 2500,
+        "imagen": "/img/oreos.jpg",
+        "descripcion": "Galletas Oreo sabor original de 114 gramos.",
+        "categoria": "alimentos",
+        "stock": 38,
+        "feature": true
+    },
+    {
+        "id": 9,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25,
+        "feature": true
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25,
+        "feature": true
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25,
+        "feature": true
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25,
+        "feature": true
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25,
+        "feature": true
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25,
+        "feature": true
+    },
+    {
+        "id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 25
+    },
+    {"id": 6,
+        "nombre": "Alfajor Cofler Block",
+        "precio": 1500,
+        "imagen": "/img/alfajorBlock60gr.jpg",
+        "descripcion": "Alfajor Cofler Block de 60 gramos, relleno de dulce de leche y cubierto de chocolate.",
+        "categoria": "alimentos",
+        "stock": 45
+    }
+
+
+
+
+]
