@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/css/checkout.css">
+<%- include('../partials/header') %>
+
+<main class="main">
+    
+    <div class="forms-columna">
+        <section class="tarjeta">
+            <h2>Dirección de envío</h2>
+            <div class="input">
+                <label>Dirección</label>
+                <input type="text" placeholder="Calle y Número">
+                <label>Ciudad</label>
+                <input type="text" placeholder="Ciudad">
+                <label>Provincia</label>
+                <input type="text" placeholder="Provincia">
+                <label>Código Postal</label>
+                <input type="text" placeholder="Código Postal">
+            </div>
+        </section>
+
+        <section class="tarjeta">
+            <h2>Método de pago</h2>
+            <div class="radio">
+                <label><input type="radio" name="payment" checked> Tarjeta de crédito / Débito</label>
+                <label><input type="radio" name="payment"> Mercado Pago</label>
+                <label><input type="radio" name="payment"> Transferencia bancaria</label>
+            </div>
+        </section>
+        
+        <section class="tarjeta">
+            <h2>Información de la tarjeta</h2>
+            <div class="input">
+                <label>Número de Tarjeta</label>
+                <input type="text" placeholder="XXXX XXXX XXXX XXXX">
+                <label>Fecha de Vencimiento</label>
+                <input type="text" placeholder="MM/AA">
+                <label>Código de Seguridad</label>
+                <input type="text" placeholder="XXX">
+            </div>
+        </section>
+    </div>
+
+    <aside class="resum-column">
+        <div class="tarj-res">
+            <h2>Resumen del pedido</h2>
+            
+            <% if (cart.length === 0) { %>
+                <p>No hay productos en el carrito.</p>
+                <a href="/">Seguir comprando</a>
+            <% } else { %>
+                <% cart.forEach(item => { %>
+                    <div class="item">
+                        <img src="<%= item.product.imagen %>" alt="<%= item.product.nombre %>">
+                        <div class="info">
+                            <p><%= item.product.nombre %></p>
+                            <span><%= item.quantity %> unidad(es)</span>
+                        </div>
+                        <p class="precio"><%= item.subtotal %> $</p>
+                    </div>
+                <% }); %>
+            <% } %>
+
+            <hr>
+
+            <div class="total">
+                <p>Subtotal <span><%= subtotal %> $</span></p>
+                <p>Envío <span class="gratis">Gratis</span></p>
+                <hr>
+                <p>Total <strong><%= total %> $</strong></p>
+            </div>
+
+            <button class="btn-confirmar">Confirmar Compra</button>
+        </div>
+    </aside>
+
+</main>
+
+<%- include('../partials/footer') %>

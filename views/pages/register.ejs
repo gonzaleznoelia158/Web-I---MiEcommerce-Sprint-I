@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+
+<body>
+    
+<div class="form-wrap">
+  <h1>Crear cuenta</h1>
+ 
+  <div class="half-row">
+    <div class="form-row">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="Ana" autocomplete="given-name">
+      <p class="error-msg" id="err-nombre"></p>
+    </div>
+    <div class="form-row">
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" placeholder="García" autocomplete="family-name">
+      <p class="error-msg" id="err-apellido"></p>
+    </div>
+  </div>
+ 
+  <div class="form-row">
+    <label for="correo">Email</label>
+    <input type="text" id="correo" placeholder="ana@example.com" autocomplete="email">
+    <p class="error-msg" id="err-correo"></p>
+</div>
+ 
+  <div class="form-row">
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" placeholder="••••••••" autocomplete="new-password">
+    <ul class="req-list" id="req-list">
+      <li id="r-len"><i class="ti ti-circle"></i> Mín. 8 caracteres</li>
+      <li id="r-letter"><i class="ti ti-circle"></i> Al menos una letra</li>
+      <li id="r-num"><i class="ti ti-circle"></i> Al menos un número</li>
+      <li id="r-special"><i class="ti ti-circle"></i> Carácter especial</li>
+      <li id="r-noban"><i class="ti ti-circle"></i> Sin cadenas prohibidas</li>
+      <li id="r-noemail"><i class="ti ti-circle"></i> No igual al email</li>
+    </ul>
+    <p class="error-msg" id="err-password"></p>
+  </div>
+ 
+  <button class="submit-btn" id="submit-btn" disabled>Registrarse</button>
+  <p class="login-link">¿Ya tenes cuenta? <a href="/login">Iniciar sesión</a></p>
+  <div class="success-banner" id="success-banner">
+    ✓ ¡Registro exitoso! Petición enviada correctamente.
+</div>
+</div>
+<script src="/js/validRegister.js"></script>
+</body>
+</html>

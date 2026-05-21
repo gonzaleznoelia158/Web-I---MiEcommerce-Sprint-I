@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session'); 
 
 // Configurar el motor de plantillas EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Definir la carpeta de archivos estáticos (CSS, imágenes)
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Leer formularios
 app.use(express.urlencoded({ extended: true }));
