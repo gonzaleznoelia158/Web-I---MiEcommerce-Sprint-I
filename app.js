@@ -26,8 +26,10 @@ app.use(session({
 app.use((req, res, next) => {
     try {
         res.locals.cartTotal = cartService.getTotalPesos(req, productsService) || 0;
+        res.locals.cartCont = cartService.getCantidad(req, productsService) || 0;
     } catch (error) {
         res.locals.cartTotal = 0; // Si tira error arranca en 0
+        res.locals.cartCont = 0;
     }
     next();
 });
@@ -36,12 +38,15 @@ app.use((req, res, next) => {
 const mainRouter = require('./routes/mainRoutes');
 const productsRouter = require('./routes/productRoutes');
 const { title } = require('process');
-const indexRouter = require('./routes/index');
+const indexRoutes = require('./routes/indexRoutes');
+const categoryRouter = require('./routes/categoryRoutes');
 
 // Usar rutas
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
-app.use('/', indexRouter);
+app.use('/categories', categoryRouter);
+app.use('/search', searchRouter);
+app.use('/', indexRoutes);
 
 // Servidor 
 const PORT = 3000;

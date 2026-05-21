@@ -1,125 +1,244 @@
+body {
+    background-color: #f8d991;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+/* Contenedor principal */
 .carrito-page {
-  background: #f0f0f0;
-  min-height: 80vh;
-  padding: 24px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.carrito-vacio{
-  text-align: center;
-  padding: 40px 30px;
-  background: f4f4f4;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fff8ee;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Link volver */
 .volver {
-  font-size: 13px;
-  color: #555;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 12px;
+    display: inline-block;
+    color: #5b2c01;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    transition: 0.2s;
 }
 
+.volver:hover {
+    color: rgba(240, 129, 9, 0.95);
+    text-decoration: underline;
+}
+
+/* Título */
 .carrito-page h2 {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 20px;
+    color: #5b2c01;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(240, 129, 9, 0.4);
+    padding-bottom: 10px;
 }
 
+/* Carrito vacío */
+.carrito-vacio {
+    text-align: center;
+    padding: 3rem 0;
+    color: #5b2c01;
+}
+
+.carrito-vacio p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Card de cada producto */
 .producto-card {
-  background: #fff;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #fff;
+    border: 1px solid rgba(240, 129, 9, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
 }
 
 .producto-card img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 6px;
-  background: #f5f5f5;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
 }
 
+/* Nombre del producto */
 .nombre-producto {
-  flex: 1;
-  font-size: 13px;
-  color: #222;
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5b2c01;
+    min-width: 120px;
 }
 
-.boton-quitar {
-  background: #3a3a3a;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 12px;
-  cursor: pointer;
-}
-.boton {
-  background: #3a3a3a;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 9px 22px;
-  font-size: 13px;
-  cursor: pointer;
-}
+/* Controles de cantidad */
 .control {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f8d991;
+    border-radius: 20px;
+    padding: 4px 8px;
 }
 
 .control button {
-  background: none;
-  border: none;
-  font-size: 14px;
-  cursor: pointer;
-  color: #333;
+    background-color: #5b2c01;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control button:hover {
+    background-color: rgba(240, 129, 9, 0.95);
 }
 
 .control span {
-  font-size: 13px;
-  min-width: 14px;
-  text-align: center;
+    font-weight: bold;
+    color: #5b2c01;
+    min-width: 20px;
+    text-align: center;
 }
 
+/* Precio */
 .pesos {
-  font-weight: 600;
-  font-size: 15px;
-  min-width: 52px;
-  text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #5b2c01;
+    min-width: 80px;
+    text-align: right;
 }
 
+/* Botón quitar */
+.boton-quitar {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boton-quitar:hover {
+    background-color: #c0392b;
+}
+
+/* Total */
 .total {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 4px 8px;
-  font-size: 15px;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5b2c01;
+    margin: 1.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(240, 129, 9, 0.4);
 }
 
-.pie-carrito {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 4px;
+/* Botones generales */
+.boton {
+    background-color: #5b2c01;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 8px;
+    text-decoration: none;
+    display: inline-block;
 }
 
+.boton:hover {
+    background-color: rgba(240, 129, 9, 0.95);
+}
+
+/* Botón pagar */
 .boton-pagar {
-  background: #3a3a3a;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 9px 22px;
-  font-size: 13px;
-  cursor: pointer;
+    background-color: rgba(240, 129, 9, 0.95);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boton-pagar:hover {
+    background-color: #5b2c01;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(240, 129, 9, 0.3);
+    margin: 1.5rem 0;
+}
+
+/* pie del carrito y botón pagar a la derecha */
+.pie-carrito {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 600px) {
+    .carrito-page {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .producto-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .producto-card img {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+    }
+
+    .pesos {
+        text-align: left;
+    }
+
+    .total {
+        text-align: left;
+    }
+
+    .pie-carrito {
+        justify-content: center;
+    }
+
+    .boton-pagar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
 }

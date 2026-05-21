@@ -13,13 +13,16 @@
     <div class="left">
        <nav class="nav">
       <a href="/" class="logo">
-        <img src="/img/foot/home.jpg" alt="Logo" title="Inicio">
+        <img src="/img/index/logome.png" alt="Logo" title="Inicio">
+      </a>
       </nav>
     </div>
 
     <div class="center">
-      <input type="text" placeholder="Buscar productos..." class="buscar">
-      <button class="btn.buscar" type="submit"><i class="fas fa-search"></i></button>
+      <form action="/search" method="GET" class="form-buscar"> 
+      <input type="text" name="q" placeholder="Buscar productos..." class="buscar">
+      <button class="btn-buscar" type="submit"><i class="fas fa-search"></i></button>
+    </form>
     </div>
 
     <div class="auth">

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #0b1020;
+    background-color: #f8d991;
     font-family: Arial, sans-serif;
 }
 
@@ -14,7 +14,7 @@ main {
 
 /* Card */
 form {
-    background-color: #243469bb;
+    background-color: rgba(240, 129, 9, 0.95);
     padding: 30px;
     border-radius: 25px;
     width: 300px;
@@ -28,7 +28,7 @@ form p {
     text-align: center;
     font-size: 20px;
     margin-bottom: 15px;
-    color: #dde8ff;
+    color: #fafafb;
 }
 
 /* Inputs */
@@ -37,14 +37,14 @@ input {
     margin-top: 10px;
     border-radius: 25px;
     border: none;
-    background-color: #0e3f88;
-    color: #dde8ff;
+    background-color: #f8d991;
+    color: #fafafb;
     transition: 0.3s;
 }
 
 /* Placeholder: El texto dentro del input que indica qué información se debe ingresar. */
 input::placeholder {
-    color: #ffffff59;
+    color: #05040459;
     opacity: 0.7;
 }
 
@@ -53,7 +53,7 @@ Focus: Al hacer clic en el input, se mantiene el fondo resaltado hasta que se ha
 
 input:hover,
 input:focus {
-    background-color: #6ba6ff67;
+    background-color: #5b2c01;
     outline: none;
 }
 
@@ -63,7 +63,7 @@ button {
     padding: 10px;
     border: none;
     border-radius: 10px;
-    background-color: #1359c2;
+    background-color: #5b2c01;
     color: #dde8ff;
     cursor: pointer;
     transition: 0.3s;

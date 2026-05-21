@@ -1,5 +1,5 @@
 .body {
-    background-color: blue;
+    background-color: #f8d991;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -20,7 +20,8 @@
 }
 /*Cambiar el fondo por el color que quieran*/
 .tarjeta, .tarj-res {
-    background-color: lightgray;
+    background-color: rgba(252, 154, 49, 0.95);
+    width: 90%;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -29,7 +30,7 @@
 .tarjeta h2, .tarj-res h2 {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #5c3a21;
 }
 
 .input {
@@ -41,7 +42,7 @@
 
 .input label {
     font-size: 0.9rem;
-    color: #666;
+    color: #5c3a21;
 }
 
 .input input {
@@ -82,15 +83,14 @@
 }
 
 .resum-column .item img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 70px;
     object-fit: contain;
-    background: #f9f9f9;
     border-radius: 4px;
 }
 
 .resum-column .info p {
-    color: black;
+    color: #5c3a21;
     margin: 0;
     font-size: 0.9rem;
     font-weight: bold;
@@ -98,7 +98,7 @@
 
 .resum-column .info span {
     font-size: 0.8rem;
-    color: #888;
+    color: #5c3a21;
 }
 
 .resum-column .precio {
@@ -116,7 +116,7 @@ hr {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
-    color: black;
+    color: #5c3a21;
 }
 /*Verde = gratis*/
 /*No cambiar desde aca, porque es para el boton*/
@@ -126,7 +126,7 @@ hr {
 }
 .total strong {
     font-size: 1.3rem;
-    color: black;
+    color: #5c3a21;
 }
 /* Botón Confirmar */
 .btn-confirmar {

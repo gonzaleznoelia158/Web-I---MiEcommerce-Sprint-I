@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Búsqueda: <%= query %></title>
+</head>
+<body>
+    <main>
+        <%- include('../partials/header') %>
+
+        <h3 class="titulo-productos">
+            Resultados para: "<%= query %>"
+        </h3>
+
+        <% if (results.length === 0) { %>
+            <p class="navegador">
+                No se encontraron productos para "<%= query %>".
+            </p>
+        <% } else { %>
+            <p style="padding-left: 10vh; color: #5b2c01;"><%= results.length %> producto(s) encontrado(s)</p>
+            <div class="productos-grid">
+                <% results.forEach(product => { %>
+                    <section class="caja-producto">
+                        <div class="producto">
+                            <a href="/products/<%= product.id %>">
+                                <img
+                                    src="<%= product.imagen %>"
+                                    alt="<%= product.nombre %>"
+                                    onerror="this.src='/img/fallback.jpg'"
+                                >
+                            </a>
+                        </div>
+                        <div class="descripcion">
+                            <div class="nombre">
+                                <h4><%= product.nombre %></h4>
+                            </div>
+                            <div class="puntos-producto">
+                                <span class="cantidad-puntos"><%= product.precio %></span>
+                                <span class="puntos">$</span>
+                            </div>
+                        </div>
+                    </section>
+                <% }); %>
+            </div>
+        <% } %>
+
+        <%- include('../partials/footer') %>
+    </main>
+</body>
+</html>
