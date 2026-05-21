@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const session = require('express-session'); 
+require('./db/database');
 
 // Configurar el motor de plantillas EJS
 app.set('view engine', 'ejs');
@@ -45,7 +46,6 @@ const categoryRouter = require('./routes/categoryRoutes');
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/categories', categoryRouter);
-app.use('/search', searchRouter);
 app.use('/', indexRoutes);
 
 // Servidor 
