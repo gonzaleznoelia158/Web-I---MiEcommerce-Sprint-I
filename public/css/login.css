@@ -73,7 +73,7 @@ button:hover {
     background-color: #8a4a10;
 }
 
-/* Register */
+/* Registro */
 
 form a {
     color: #FFFFFF;
@@ -83,4 +83,22 @@ form a {
 
 form a:hover {
     color: #6ecbff;
+}
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin: -5px 0 10px 0;
+    display: none; /* se ocultan por defecto */
+}
+
+.error-msg.show {
+    display: block;
+}
+
+input.invalid {
+    border: 1px solid #ff4d4d;
+}
+
+input.valid {
+    border: 1px solid #4caf50;
 }

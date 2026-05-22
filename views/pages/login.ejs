@@ -8,14 +8,20 @@
 </head>
 <body>
 <main>
-    <form action="/" method="GET">
+    
+    <form action="/login" method="POST">
         <p>Iniciar Sesión</p>
-            <input type="text" name="Usuario" placeholder="Usuario" required>
-            <input type="password" name="Contraseña" placeholder="Contraseña" required>
-        <button type="submit">Iniciar Sesión</button>
+        
+        <input type="text" id="correo" name="correo" placeholder="Email" required>
+        <p class="error-msg" id="err-correo"></p>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <p class="error-msg" id="err-password"></p>
+        <button type="submit" id="submit-btn" disabled>Iniciar Sesión</button>
 
         <p>¿No tienes cuenta? <a href="/register">Registrate</a></p>
     </form>
 </main>
+
+<script src="/js/validLogin.js"></script>
 </body>
 </html>
