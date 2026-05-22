@@ -34,19 +34,6 @@
     </div>
 </section>
 
-<<<<<<< HEAD
-<h3 class="titulo-productos">Tambien podria interesarte</h3>
-
-<div class="ordenar">
-<label for="ordenar">Ordenar por:</label>
-<div class="select">
-    <select id="ordenar" name="ordenar">
-    <option value="/" <%= sort ==='asc'? 'selected' : '' %>>Sin orden</option>
-    <option value="/?sort=asc" <%= sort === 'asc' ? 'selected' : '' %>>Menor precio</option>
-    <option value="/?sort=desc" <%= sort === 'desc' ? 'selected' : '' %>>Mayor precio</option>
-    </select>
-</div>
-=======
       <div class="ordenar">
         <label for="ordenar">Ordenar por:</label>
         <div class="select">
@@ -87,7 +74,6 @@
       </a>
     </section>
   <% }); %>
->>>>>>> d43909de0dc9525a2044b626b7a5819460144e40
 </div>
 
 <div class="productos-grid">
@@ -215,50 +201,6 @@
     </div>
 </section>
 
-<<<<<<< HEAD
-<section class="caja-producto">
-    <div class="producto">
-    <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-    </div>
-        
-<div class="descripcion">
-    <div class="nombre">
-        <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-    </div>
-    <div class="puntos-producto">
-        <span class="cantidad-puntos">XX.XXX</span>
-        <span class="puntos">PUNTOS</span>
-    </div>
-    </div>
-</section>
-
-<section class="caja-producto">
-    <div class="producto">
-    <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-    </div>
-        
-<div class="descripcion">
-    <div class="nombre">
-    <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-    </div>
-    <div class="puntos-producto">
-    <span class="cantidad-puntos">XX.XXX</span>
-    <span class="puntos">PUNTOS</span>
-    </div>
-</div>
-</section>
-</div>  
-
-<%# CONTENEDOR DE ICONOS 2 %>
-<%- include('../partials/secciones') %>
-
-<script>
-const select = document.getElementById('ordenar');
-select.addEventListener('change', function() {
-window.location.href = this.value;
-});
-</script>
-=======
         <%# CONTENEDOR DE ICONOS 2 %>
         <%- include('../partials/secciones') %>
 
@@ -266,4 +208,3 @@ window.location.href = this.value;
     </main>
   </body>
 </html>
->>>>>>> d43909de0dc9525a2044b626b7a5819460144e40

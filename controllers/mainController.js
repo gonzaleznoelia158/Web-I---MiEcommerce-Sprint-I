@@ -22,7 +22,19 @@ const mainController = {
     // Lógica para register
     register: (req, res) => { 
         res.render('pages/register', { layout: false }); 
+    },
+
+    processLogin: (req, res) => { 
+
+        res.render('pages/login', { layout: false }); 
+    },
+
+    processRegister: (req, res) => {
+
+        res.render('pages/register', { layout: false }); 
     }
+
+    
 };
 
 module.exports = mainController;
