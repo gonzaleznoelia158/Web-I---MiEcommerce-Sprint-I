@@ -9,7 +9,6 @@
 </head>
 <body>
  <main>
-    <%- include('../partials/header') %>
 
      <h3 class="titulo-productos">Categoría: <%= category %></h3>
        <% if (products.length === 0) { %>
@@ -35,9 +34,6 @@
                 <% }); %>
          </div>
         <% } %>
-
-         <%- include('../partials/footer') %>
-
     </main> 
 </body>
 </html>

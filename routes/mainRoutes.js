@@ -7,8 +7,11 @@ const products = require('../data/products.json');
 router.get('/', (req, res) => {
   const sort = req.query.sort || null; 
   const products = productsService.getAll(sort);
-  res.render('pages/index', {products, sort});
+    const suggestedProducts = productsService.getAll(null)
+    .sort(() => Math.random() - 0.5).slice(0, 4);
+  res.render('pages/index', {products, sort, suggestedProducts});
 });
+
 //Rutas de registro y login
 router.get('/login', (req, res) => { res.render('pages/login') });
 router.get('/register', (req, res) => { res.render('pages/register') });
@@ -18,7 +21,6 @@ router.get('/search', (req, res) => {
     if (!query) {
         return res.redirect('/');
     }
-
     const results = products.filter(p =>
         p.nombre.toLowerCase().includes(query) ||
         p.categoria.toLowerCase().includes(query) ||
@@ -27,5 +29,8 @@ router.get('/search', (req, res) => {
 
     res.render('pages/search', { results, query });
 });
+//rutas post login y register
+router.post('/register', mainController.processRegister);
+router.post('/login', mainController.processLogin);
 
 module.exports = router;
