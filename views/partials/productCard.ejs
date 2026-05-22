@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Cart</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-</body>
-</html>
+
+<article class="card">
+    <% 
+        // Lógica de fallback: ¿Tiene imagen? Si no, usa la de por defecto.
+        const imageToShow = product.image ? product.image : '/images/default-fallback.jpg'; 
+    %>
+    
+    <img src="<%= imageToShow %>" alt="<%= product.name %>">
+
+    <div class="descripcion">
+        <div class="nombre">
+            <h4><%= product.name %></h4>
+            <% if (product.stock === 0) { %>
+            <span class="badge-sin-stock">Sin stock</span>
+            <% } %>
+        </div>
+        <div class="puntos-producto">
+            <span class="cantidad-puntos"><%= product.price %></span>
+            <span class="puntos">PUNTOS</span>
+        </div>
+        <a href="/products/<%= product.id %>">Ver producto</a>
+    </div>
+</article>

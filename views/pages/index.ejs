@@ -1,229 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
-  <%- include('../partials/header') %>
-  <link rel="stylesheet" href="/css/index.css">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    <title>Home</title>
-</head>
-  <body>
-    <main>
-        <%# Header %> 
-      <%- include('../partials/header') %>
+<link rel="stylesheet" href="/css/index.css">
 
-      <%# BANNER PUBLICITARIO %>
-        <section class="banner">
-          <div class="banner-card">
-            <img src="/img/index/Banner disney.png" alt="Disney Plus">
-          
-            <div class="texto-encima">
-              <h3>¡50% OFF!</h3>
-              <p>Canjea a partir de 50.000 puntos <br> y gana descuentos exclusivos<br>en Disney+</p>
-            </div>
-          </div>
+<%# BANNER PUBLICITARIO %>
+<section class="banner">
+    <div class="banner-card">
+    <img src="/img/index/Banner disney.png" alt="Disney Plus">
+    
+    <div class="texto-encima">
+        <h3>¡50% OFF!</h3>
+        <p>Canjea a partir de 50.000 puntos <br> y gana descuentos exclusivos<br>en Disney+</p>
+    </div>
+    </div>
 
-          <div class="banner-card">
-            <img src="/img/index/bannerhbo.png" alt="HBO Max">
-          
-            <div class="texto-encima">
-              <h3>¡1 mes GRATIS!</h3>
-              <p>Canjea a partir de 30.000 puntos <br>y obtene 1 mes de HBO Max sin cargo</p>
-            </div>
-          </div>
-        </section>
+    <div class="banner-card">
+    <img src="/img/index/bannerhbo.png" alt="HBO Max">
+    
+    <div class="texto-encima">
+        <h3>¡1 mes GRATIS!</h3>
+        <p>Canjea a partir de 30.000 puntos <br>y obtene 1 mes de HBO Max sin cargo</p>
+    </div>
+    </div>
+</section>
 
-      <%# CONTENEDOR DE ICONOS %>
-      <%- include('../partials/secciones') %>
+<%# CONTENEDOR DE ICONOS %>
+<%- include('../partials/secciones') %>
 
-        <%# SECCION DE PRODUCTOS %>
+<%# SECCION DE PRODUCTOS %>
+<section class="te-puede-interesar">
+    <h2>Te puede interesar</h2>
+    <div class="productos-contenedor">
+        <% suggestedProducts.forEach(product => { %>
+            <%- include('../partials/productCard', { product: product }) %>
+        <% }) %>
+    </div>
+</section>
 
-      <h3 class="titulo-productos">Tambien podria interesarte</h3>
+<h3 class="titulo-productos">Tambien podria interesarte</h3>
 
-      <div class="ordenar">
-        <label for="ordenar">Ordenar por:</label>
-        <div class="select">
-          <select id="ordenar" name="ordenar">
-            <option value="/" <%= sort ==='asc'? 'selected' : '' %>>Sin orden</option>
-            <option value="/?sort=asc" <%= sort === 'asc' ? 'selected' : '' %>>Menor precio</option>
-            <option value="/?sort=desc" <%= sort === 'desc' ? 'selected' : '' %>>Mayor precio</option>
-          </select>
-        </div>
-      </div>
-
-      <%# Scripts de ordenamiento %>
-      <script>
-      const select = document.getElementById('ordenar');
-      select.addEventListener('change', function() {
-        window.location.href = this.value;
-        });
-      </script>
-
-
-      <div class="productos-grid">
-  <% products.forEach(product => { %>
-    <section class="caja-producto">
-      <div class="producto">
-        <a href="/products/<%= product.id %>">
-        <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
-      </div>
-        <div class="descripcion">
-          <div class="nombre">
-            <h4><%= product.nombre %></h4>
-          </div>
-          <div class="puntos-producto">
-            <span class="cantidad-puntos"><%= product.precio %></span>
-            <span class="puntos">$</span>
->>>>>>> ramita
-          </div>
-        </div>
-      </a>
-    </section>
-  <% }); %>
+<div class="ordenar">
+<label for="ordenar">Ordenar por:</label>
+<div class="select">
+    <select id="ordenar" name="ordenar">
+    <option value="/" <%= sort ==='asc'? 'selected' : '' %>>Sin orden</option>
+    <option value="/?sort=asc" <%= sort === 'asc' ? 'selected' : '' %>>Menor precio</option>
+    <option value="/?sort=desc" <%= sort === 'desc' ? 'selected' : '' %>>Mayor precio</option>
+    </select>
 </div>
-      
-    <%# SECCION DE PRODUCTOS 2 %>
+</div>
 
-    <h3 class="titulo-productos">Los mas pedidos</h3>
-    <div class="productos-grid">  
-      <section class="caja-producto">
-            <div class="producto">
-              <img src="/img/productos/burgerSimple.jpg" alt="Burger Medallon Simple">
-            </div>
-        
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>Burger Medallon Simple con Triple Cheddar</h4>
-            </div>
-            
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">40.000</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-      </section>
+<div class="productos-grid">
+<% products.forEach(product => { %>
+<section class="caja-producto">
+<div class="producto">
+<a href="/products/<%= product.id %>">
+<img src="<%= product.imagen %>" alt="<%= product.nombre %>">
+</div>
+<div class="descripcion">
+    <div class="nombre">
+    <h4><%= product.nombre %></h4>
+    </div>
+    <div class="puntos-producto">
+    <span class="cantidad-puntos"><%= product.precio %></span>
+    <span class="puntos">$</span>
+    </div>
+</div>
+</a>
+</section>
+<% }); %>
+</div>
 
-        <section class="caja-producto">
-          <div class="producto">
-            <img src="/img/productos/FantaRoja.jpg" alt="Fanta Roja 330ml">
-          </div>
-              
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>Fanta Sabor Frutilla 310ml</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">15.000</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-        </section>
+<%# SECCION DE PRODUCTOS 2 %>
 
-        <section class="caja-producto">
-          <div class="producto">
-             <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-              
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">XX.XXX</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="caja-producto">
-          <div class="producto">
-             <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-              
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">XX.XXX</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-        </section>
-    </div>  
-      
-        <%- include('../partials/secciones') %>
-
-<<<<<<< HEAD
-    <div class="productos-grid">  
-      <section class="caja-producto">
-          <div class="producto">
-            <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-        
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-            </div>
-            
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">XX.XXX</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-      </section>
-
-        <section class="caja-producto">
-          <div class="producto">
-            <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-              
-          <div class="descripcion">
-            <div class="nombre">
-              <h4>NOMBRE DEL PRODUCTO O SERVICIOl</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">XX.XXX</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-          </div>
-        </section>
-
-      <section class="caja-producto">
-          <div class="producto">
-            <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-              
-        <div class="descripcion">
-            <div class="nombre">
-              <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-            </div>
-            <div class="puntos-producto">
-              <span class="cantidad-puntos">XX.XXX</span>
-              <span class="puntos">PUNTOS</span>
-            </div>
-         </div>
-      </section>
-
-      <section class="caja-producto">
-          <div class="producto">
-            <img src="/img/index/cuadricula.jpg" alt="XXXXX">
-          </div>
-              
-        <div class="descripcion">
-          <div class="nombre">
-            <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
-          </div>
-          <div class="puntos-producto">
-            <span class="cantidad-puntos">XX.XXX</span>
-            <span class="puntos">PUNTOS</span>
-          </div>
+<h3 class="titulo-productos">Los mas pedidos</h3>
+<div class="productos-grid">  
+<section class="caja-producto">
+        <div class="producto">
+        <img src="/img/index/burgerSimple.jpg" alt="Burger Medallon Simple">
         </div>
-      </section>
-    </div>  
-        <%- include('../partials/secciones') %>
-      <%- include('../partials/footer') %>
-    </main>
-  </body>
-</html>
+    
+    <div class="descripcion">
+    <div class="nombre">
+        <h4>Burger Medallon Simple con Triple Cheddar</h4>
+    </div>
+    
+    <div class="puntos-producto">
+        <span class="cantidad-puntos">40.000</span>
+        <span class="puntos">PUNTOS</span>
+    </div>
+    </div>
+</section>
+
+<section class="caja-producto">
+    <div class="producto">
+    <img src="/img/index/FantaRoja.jpg" alt="Fanta Roja 330ml">
+    </div>
+        
+    <div class="descripcion">
+    <div class="nombre">
+        <h4>Fanta Sabor Frutilla 310ml</h4>
+    </div>
+    <div class="puntos-producto">
+        <span class="cantidad-puntos">15.000</span>
+        <span class="puntos">PUNTOS</span>
+    </div>
+    </div>
+</section>
+
+<section class="caja-producto">
+    <div class="producto">
+        <img src="/img/index/cuadricula.jpg" alt="XXXXX">
+    </div>
+        
+    <div class="descripcion">
+    <div class="nombre">
+        <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
+    </div>
+    <div class="puntos-producto">
+        <span class="cantidad-puntos">XX.XXX</span>
+        <span class="puntos">PUNTOS</span>
+    </div>
+    </div>
+</section>
+
+<section class="caja-producto">
+    <div class="producto">
+        <img src="/img/index/cuadricula.jpg" alt="XXXXX">
+    </div>
+        
+    <div class="descripcion">
+    <div class="nombre">
+        <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
+    </div>
+    <div class="puntos-producto">
+        <span class="cantidad-puntos">XX.XXX</span>
+        <span class="puntos">PUNTOS</span>
+    </div>
+    </div>
+</section>
+</div>  
+
+<div class="productos-grid">  
+<section class="caja-producto">
+    <div class="producto">
+    <img src="/img/index/cuadricula.jpg" alt="XXXXX">
+    </div>
+    
+    <div class="descripcion">
+    <div class="nombre">
+        <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
+    </div>
+    
+    <div class="puntos-producto">
+        <span class="cantidad-puntos">XX.XXX</span>
+        <span class="puntos">PUNTOS</span>
+    </div>
+    </div>
+</section>
+
+<section class="caja-producto">
+    <div class="producto">
+    <img src="/img/index/cuadricula.jpg" alt="XXXXX">
+    </div>
+        
+    <div class="descripcion">
+    <div class="nombre">
+        <h4>NOMBRE DEL PRODUCTO O SERVICIOl</h4>
+    </div>
+    <div class="puntos-producto">
+        <span class="cantidad-puntos">XX.XXX</span>
+        <span class="puntos">PUNTOS</span>
+    </div>
+    </div>
+</section>
+
+<section class="caja-producto">
+    <div class="producto">
+    <img src="/img/index/cuadricula.jpg" alt="XXXXX">
+    </div>
+        
+<div class="descripcion">
+    <div class="nombre">
+        <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
+    </div>
+    <div class="puntos-producto">
+        <span class="cantidad-puntos">XX.XXX</span>
+        <span class="puntos">PUNTOS</span>
+    </div>
+    </div>
+</section>
+
+<section class="caja-producto">
+    <div class="producto">
+    <img src="/img/index/cuadricula.jpg" alt="XXXXX">
+    </div>
+        
+<div class="descripcion">
+    <div class="nombre">
+    <h4>NOMBRE DEL PRODUCTO O SERVICIO</h4>
+    </div>
+    <div class="puntos-producto">
+    <span class="cantidad-puntos">XX.XXX</span>
+    <span class="puntos">PUNTOS</span>
+    </div>
+</div>
+</section>
+</div>  
+
+<%# CONTENEDOR DE ICONOS 2 %>
+<%- include('../partials/secciones') %>
+
+<script>
+const select = document.getElementById('ordenar');
+select.addEventListener('change', function() {
+window.location.href = this.value;
+});
+</script>

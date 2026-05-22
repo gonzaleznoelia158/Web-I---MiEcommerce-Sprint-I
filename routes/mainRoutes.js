@@ -28,5 +28,4 @@ router.get('/search', (req, res) => {
     res.render('pages/search', { results, query });
 });
 
-//Exporta la ruta
 module.exports = router;
