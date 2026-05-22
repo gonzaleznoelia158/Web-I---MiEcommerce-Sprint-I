@@ -54,6 +54,11 @@ function getTotalPesos(req, productsService) {
   const fullCart = getFullCart(req, productsService);
   return fullCart.reduce((total, item) => total + item.subtotal, 0);
 }
+//calcula la cantidad total de productos en el carrito
+function getCantidad(req) {
+  const cart = getCart(req);
+  return cart.reduce((total, item) => total + item.quantity, 0);
+}
 
 //exporta las funciones del servicio
-module.exports = { getCart, addItem, updateQuantity, clearCart, getFullCart, getTotalPesos };
+module.exports = { getCart, addItem, updateQuantity, clearCart, getFullCart, getTotalPesos, getCantidad };

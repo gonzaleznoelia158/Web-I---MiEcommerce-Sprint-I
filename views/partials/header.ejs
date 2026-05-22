@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="/css/header.css">
 <link rel="stylesheet" href="/css/footer.css">
 <%# Font Awesome para íconos de redes sociales %>
@@ -12,28 +11,27 @@
   <div class="header-container">
 
     <div class="left">
+       <nav class="nav">
       <a href="/" class="logo">
-        <img src="/img/foot/logo_blanco.png" alt="Logo">
+        <img src="/img/index/logome.png" alt="Logo" title="Inicio">
       </a>
-
-      <nav class="nav">
-        <a href="/">Inicio</a>
       </nav>
     </div>
 
     <div class="center">
-      <input type="text" placeholder="Buscar productos..." class="buscar">
-      <button class="btn.buscar" type="submit"><i class="fas fa-search"></i></button>
-    </div>
-
-    <div class="carrito-header">
-        <a href="/products/cart" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;">
-            <i class="fa-solid fa-cart-shopping"></i> 
-            <span class="monto-carrito">$<%= cartTotal %></span>
-        </a>
+      <form action="/search" method="GET" class="form-buscar"> 
+      <input type="text" name="q" placeholder="Buscar productos..." class="buscar">
+      <button class="btn-buscar" type="submit"><i class="fas fa-search"></i></button>
+    </form>
     </div>
 
     <div class="auth">
+      <a href="/products/cart" class="carrito"><i class="fas fa-shopping-cart">
+        <% if (cartCont > 0){ %>
+          <span class="contador"><%= cartCont %></span>
+        <% } %>
+      </i></a>
+      <hr>
       <a href="/login">Login</a>
       <span>/</span>
       <a href="/register">Register</a>

@@ -1,5 +1,8 @@
 node_modules/
 package-lock.json
 package.json
+<<<<<<< HEAD
 .env
 db/*.db
+ecommerce.db
+

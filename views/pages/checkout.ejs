@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/checkout.css">
+<link rel="stylesheet" href="/css/checkout.css">
 <%- include('../partials/header') %>
 
 <main class="main">
@@ -63,7 +63,7 @@
             <hr>
 
             <div class="total">
-                <p>Subtotal <span class="precio">$12.512</span></p>
+                <p>Subtotal <span><%= subtotal %> $</span></p>
                 <p>Envío <span class="gratis">Gratis</span></p>
                 <hr>
                 <p>Total <strong><%= total %> $</strong></p>
@@ -74,5 +74,4 @@
     </aside>
 
 </main>
-
 <%- include('../partials/footer') %>

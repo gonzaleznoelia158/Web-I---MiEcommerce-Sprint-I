@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/index.css">
+    <title><%= category %></title>
+</head>
+<body>
+ <main>
+    <%- include('../partials/header') %>
+
+     <h3 class="titulo-productos">Categoría: <%= category %></h3>
+       <% if (products.length === 0) { %>
+        <p class="no-productos">No hay productos disponibles en esta categoría.</p>
+         <% } else { %>
+          <div class="productos-grid">
+            <% products.forEach(product => { %>
+           <section class="caja-producto">
+            <div class="producto">
+             <a href="/products/<%= product.id %>">
+             <img src="<%= product.imagen %>" alt="<%= product.nombre %>" onerror="this.src='/img/fallback.jpg'"> </a>
+            </div>
+            <div class="descripcion">
+             <div class="nombre">
+              <h4><%= product.nombre %></h4>
+            </div>
+            <div class="puntos-producto">
+             <span class="cantidad-puntos"><%= product.precio %></span>
+             <span class="puntos">$</span>
+            </div>
+          </div>
+        </section>
+                <% }); %>
+         </div>
+        <% } %>
+
+         <%- include('../partials/footer') %>
+
+    </main> 
+</body>
+</html>
