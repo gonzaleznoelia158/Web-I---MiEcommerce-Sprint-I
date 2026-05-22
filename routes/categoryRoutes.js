@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const products = require('../data/products.json');
+const productsService = require('../services/productsService');
 
 router.get('/:category', (req, res) => {
     const category = req.params.category.toLowerCase();
-    const filtered = products.filter(p => p.categoria.toLowerCase() === category);
+    const allProducts = productsService.getAll();
+    const filtered = allProducts.filter(p => p.categoria.toLowerCase() === category);
+    
     res.render('pages/category', { category, products: filtered });
 });
 
