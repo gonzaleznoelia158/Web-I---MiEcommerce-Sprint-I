@@ -4,7 +4,7 @@ const path = require('path');
 const dbPath = path.join(__dirname, 'ecommerce.db');
 const db = new Database(dbPath);
 
-// Crear tabla si no existe 
+
 db.exec(`
   CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,6 +14,17 @@ db.exec(`
     descripcion TEXT,
     categoria TEXT,
     stock INTEGER DEFAULT 0
+  )
+`);
+
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   )
 `);
 

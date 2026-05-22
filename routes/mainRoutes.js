@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
   res.render('pages/index', {products, sort, suggestedProducts});
 });
 
-router.get('/login', (req, res) => { res.render('pages/login') });
-router.get('/register', (req, res) => { res.render('pages/register') });
+router.get('/login', (req, res) => { res.render('pages/login',{ layout: false }) });
+router.get('/register', (req, res) => { res.render('pages/register',{ layout: false }) });
 
 router.get('/search', (req, res) => {
     const query = req.query.q?.toLowerCase().trim();
