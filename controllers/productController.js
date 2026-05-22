@@ -29,6 +29,14 @@ function showProductDetail(req, res) {
   }
 
   res.render('pages/product', { product, relatedProducts }); 
+  //User Story 8
+  const todosLosProductos = productsService.getAll();
+  
+  const relacionados = todosLosProductos 
+    .filter(p => p.id !== id)
+    .slice(0, 2);
+
+     res.render('pages/product', { product, relacionados }); //si todo sale bien, muestra el producto correspondinte
 }
 
 module.exports = { showProductDetail };
