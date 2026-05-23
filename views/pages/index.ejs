@@ -1,83 +1,40 @@
 <link rel="stylesheet" href="/css/index.css">
 
-<%# BANNER PUBLICITARIO %>
-<section class="banner">
-    <div class="banner-card">
-    <img src="/img/index/Banner disney.png" alt="Disney Plus">
-    
-    <div class="texto-encima">
-        <h3>¡50% OFF!</h3>
-        <p>Canjea a partir de 50.000 puntos <br> y gana descuentos exclusivos<br>en Disney+</p>
-    </div>
-    </div>
-
-    <div class="banner-card">
-    <img src="/img/index/bannerhbo.png" alt="HBO Max">
-    
-    <div class="texto-encima">
-        <h3>¡1 mes GRATIS!</h3>
-        <p>Canjea a partir de 30.000 puntos <br>y obtene 1 mes de HBO Max sin cargo</p>
-    </div>
-    </div>
-</section>
-
-<%# CONTENEDOR DE ICONOS %>
-<%- include('../partials/secciones') %>
-
-<%# SECCION DE PRODUCTOS SUGERIDOS %>
-
-<section class="te-puede-interesar">
-<h2 class="titulo-productos">Productos Sugeridos</h2>
-    <div class="productos-contenedor">
+<%# SECCIÓN: PRODUCTOS SUGERIDOS %>
+<section class="seccion-productos">
+    <h2 class="titulo-productos">Productos sugeridos</h2>
+    <div class="productos-grid">
         <% suggestedProducts.forEach(product => { %>
             <%- include('../partials/productCard', { product: product }) %>
         <% }) %>
     </div>
 </section>
 
-<h2 class="titulo-productos">Todos los Productos</h2>
+<%# SECCIÓN: TODOS LOS PRODUCTOS %>
+<section class="seccion-productos">
+    <h2 class="titulo-productos">Todos los productos</h2>
 
-<div class="ordenar">
-    <label for="ordenar">Ordenar por:</label>
-    <div class="select">
-        <select id="ordenar" name="ordenar">
-            <option value="/" <%= sort ==='asc'? 'selected' : '' %>>Sin orden</option>
-            <option value="/?sort=asc" <%= sort === 'asc' ? 'selected' : '' %>>Menor precio</option>
-            <option value="/?sort=desc" <%= sort === 'desc' ? 'selected' : '' %>>Mayor precio</option>
-        </select>
+    <div class="ordenar">
+        <label for="ordenar">Ordenar por:</label>
+        <div class="select">
+            <select id="ordenar" name="ordenar">
+                <option value="/">Sin orden</option>
+                <option value="/?sort=asc" <%= sort === 'asc' ? 'selected' : '' %>>Menor precio</option>
+                <option value="/?sort=desc" <%= sort === 'desc' ? 'selected' : '' %>>Mayor precio</option>
+            </select>
+        </div>
     </div>
-</div>
 
-<%# Scripts de ordenamiento %>
+    <div class="productos-grid">
+        <% products.forEach(product => { %>
+            <%- include('../partials/productCard', { product: product }) %>
+        <% }) %>
+    </div>
+</section>
+
 <script>
     const select = document.getElementById('ordenar');
-    select.addEventListener('change', function() {
+    select.addEventListener('change', function () {
         window.location.href = this.value;
     });
 </script>
-
-
-<div class="productos-grid">
-    <% products.forEach(product => { %>
-        <section class="caja-producto">
-            <a href="/products/<%= product.id %>" style="text-decoration: none; color: inherit;">
-                <div class="producto">
-                    <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
-                </div>
-                <div class="descripcion">
-                    <div class="nombre">
-                        <h4><%= product.nombre %></h4>
-                    </div>
-                    <div class="puntos-producto">
-                        <span class="cantidad-puntos"><%= product.precio %></span>
-                        <span class="puntos">$</span>
-                    </div>
-                </div>
-            </a>
-        </section>
-    <% }); %>
-</div>
-
-
-<%# CONTENEDOR DE ICONOS 2 %>
-<%- include('../partials/secciones') %>
