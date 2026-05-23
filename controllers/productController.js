@@ -14,8 +14,8 @@ function showProductDetail(req, res) {
   }
 
   const todosLosProductos = productsService.getAll();
-  let relatedProducts = [];
 
+  let relatedProducts = [];
   if (product.categoria) {
       relatedProducts = todosLosProductos.filter(
         (p) => p.categoria === product.categoria && p.id !== product.id
@@ -28,15 +28,13 @@ function showProductDetail(req, res) {
       }
   }
 
-  res.render('pages/product', { product, relatedProducts }); 
-  //User Story 8
-  const todosLosProductos = productsService.getAll();
-  
-  const relacionados = todosLosProductos 
-    .filter(p => p.id !== id)
-    .slice(0, 2);
 
-     res.render('pages/product', { product, relacionados }); //si todo sale bien, muestra el producto correspondinte
+  const productosFinales = relatedProducts.length > 0 ? relatedProducts : todosLosProductos.filter(p => p.id !== id).slice(0, 2);
+
+  res.render('pages/product', { 
+    product, 
+    relatedProducts: productosFinales 
+  }); 
 }
 
 module.exports = { showProductDetail };
