@@ -486,3 +486,8 @@ a {
     }
   }
 }
+
+.seccion-productos {
+    margin: 20px auto;
+    width: 95%;
+}

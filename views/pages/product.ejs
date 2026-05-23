@@ -9,7 +9,6 @@
 </head>
 <body>
     <main>
-
         <h1 class="titulo">Detalles del producto</h1>
         <div>
             <section class="productos-demostracion">
@@ -20,11 +19,10 @@
                     <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
                 </div>
                 <article class="descripcion-producto">
-                    
                     <div class="producto-nombre">
                         <h1><%= product.nombre %></h1>
                         <% if (product.stock === 0) { %>
-                        <span class="badge-sin-stock">Sin stock</span>
+                            <span class="badge-sin-stock">Sin stock</span>
                         <% } %>
                     </div>
                     <div class="puntos-producto-seleccionado">
@@ -39,43 +37,14 @@
                 </article>
             </section>
 
-            <h3 class="titulo-productos">También podría interesarte</h3>
-            <div class="productos-grid">  
-                
-                <section class="caja-producto">
-                    <div class="producto">
-                        <img src="/img/productos/FantaPile.jpg" alt="Fanta Sabor Original 354ml">
-                    </div>
-                    <a href="/products/1">
-                        <div class="descripcion">
-                            <div class="nombre">
-                                <h4><%= product.nombre %></h4>
-                            </div>
-                            <div class="puntos-producto">
-                                <span class="cantidad-puntos"><%= product.precio %></span>
-                                <span class="puntos">$</span>
-                            </div>
-                        </div>
-                    </a>
-                </section>
-                
-                <section class="caja-producto">
-                    <div class="producto">
-                        <img src="/img/productos/pringles.jpg" alt="Papas Pringles Sabor Original 40g">
-                    </div>
-                    <a href="/products/2">
-                        <div class="descripcion">
-                            <div class="nombre">
-                                <h4><%= product.nombre %></h4>
-                            </div>
-                            <div class="puntos-producto">
-                                <span class="cantidad-puntos"><%= product.precio %></span>
-                                <span class="puntos">$</span>
-                            </div>
-                        </div>
-                    </a>
-                </section>
-            </div>  
+            <% if (relatedProducts && relatedProducts.length > 0) { %>
+                <h3 class="titulo-productos">También podría interesarte</h3>
+                <div class="productos-grid">
+                    <% relatedProducts.forEach(product => { %>
+                        <%- include('../partials/productCard', { product: product }) %>
+                    <% }) %>
+                </div>
+            <% } %>
         </div>
     </main>
 </body>
