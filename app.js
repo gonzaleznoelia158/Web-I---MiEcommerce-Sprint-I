@@ -3,6 +3,7 @@ const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 require('./db/database');
 
 // Services
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Leer formularios
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // Session para el carrito
 app.use(session({
@@ -51,11 +53,13 @@ const mainRouter = require('./routes/mainRoutes');
 const productsRouter = require('./routes/productRoutes');
 const indexRoutes = require('./routes/indexRoutes');
 const categoryRouter = require('./routes/categoryRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/categories', categoryRouter);
 app.use('/', indexRoutes);
+app.use('/api', apiRoutes);
 
 // Error 500
 app.get('/test-error', (req, res, next) => {
