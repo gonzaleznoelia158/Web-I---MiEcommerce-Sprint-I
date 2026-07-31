@@ -29,10 +29,12 @@ app.use(cartCont);
 // Archivos de rutas
 const mainRouter = require('./routes/mainRoutes');
 const productsRouter = require('./routes/productRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 // Usar rutas
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
+app.use('/api', apiRoutes);
 
 // Servidor
 const PORT = 3000;
