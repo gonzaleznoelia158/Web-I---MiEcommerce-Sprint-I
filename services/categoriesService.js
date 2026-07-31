@@ -1,6 +1,8 @@
+const db = require('../database/db');
+
 const categoriesService = {
     getAll: async () => {
-        return [];
+        return db.prepare('SELECT DISTINCT categoria FROM products').all();
     },
     
     getById: async (id) => {
@@ -8,7 +10,8 @@ const categoriesService = {
     },
 
     count: async () => {
-        return 0;
+        const row = db.prepare('SELECT COUNT(DISTINCT categoria) AS total FROM products').get();
+        return row ? row.total : 0;
     }
 };
 
