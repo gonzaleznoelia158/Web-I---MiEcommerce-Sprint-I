@@ -3,6 +3,7 @@ const session = require('express-session');
 const cartCont = require('./middleware/cartCont');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 
 // Motor de vistas
 app.set('view engine', 'ejs');
@@ -35,7 +36,7 @@ const apiRoutes = require('./routes/apiRoutes');
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/api', apiRoutes);
-
+app.use(cors());
 // Servidor
 const PORT = 3000;
 app.listen(PORT, () => {
