@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productsApiController = require('../controllers/api/productsApiController');
 const categoriesApiController = require('../controllers/api/categoriesApiController');
+const statsApiController = require('../controllers/api/statsApiController');
 
 // GET /api/products
 router.get('/products', productsApiController.getAll);
@@ -17,5 +18,7 @@ router.delete('/products/:id', productsApiController.delete);
 router.get('/categories', categoriesApiController.list);
 // GET /api/categories/:id
 router.get('/categories/:id', categoriesApiController.detail);
+// GET /api/stats
+router.get('/stats', statsApiController.getStats);
 
 module.exports = router;
