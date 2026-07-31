@@ -27,4 +27,20 @@ function searchByName(termino) {
   return ProductModel.searchByName(termino);
 }
 
-module.exports = { getAll, getById, normalizeId, getByCategory, searchByName };
+function createProduct(data){
+  return ProductModel.create(data);
+}
+
+function updateProduct(id, data){
+  return ProductModel.update(id, data);
+}
+
+function deleteProduct(id){
+  return ProductModel.deleteProduct(id);
+}
+
+function countProduct(){
+  return ProductModel.count();
+}
+
+module.exports = { getAll, getById, normalizeId, getByCategory, searchByName, createProduct, updateProduct, deleteProduct, countProduct };

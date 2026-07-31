@@ -3,11 +3,7 @@ const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const path = require('path');
-require('./db/database');
-
-// Services
-const productsService = require('./services/productsService');
-const cartService = require('./services/cartService');
+const cors = require('cors');
 
 // Motor de vistas
 app.set('view engine', 'ejs');
@@ -49,29 +45,12 @@ app.use((req, res, next) => {
 // Rutas
 const mainRouter = require('./routes/mainRoutes');
 const productsRouter = require('./routes/productRoutes');
-const indexRoutes = require('./routes/indexRoutes');
-const categoryRouter = require('./routes/categoryRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
-app.use('/categories', categoryRouter);
-app.use('/', indexRoutes);
-
-// Error 500
-app.get('/test-error', (req, res, next) => {
-    throw new Error('Este es un error forzado para probar el 500');
-});
-
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).render('pages/500');
-});
-
-// Error 404
-app.use((req, res) => {
-    res.status(404).render('pages/404', { title: '404 - Página no encontrada' });
-});
-
+app.use('/api', apiRoutes);
+app.use(cors());
 // Servidor
 const PORT = 3000;
 app.listen(PORT, () => {
